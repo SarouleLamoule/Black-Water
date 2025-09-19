@@ -38,8 +38,7 @@ export default function Footer() {
                 marginBottom: 'var(--spacing-4)',
               }}
             >
-              Organisation clandestine opérant dans les ombres de Los Santos
-              depuis 1993.
+              Organisation clandestine opérant dans les ombres de Los Santos.
             </p>
             <div
               style={{
