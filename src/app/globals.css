@@ -2024,3 +2024,78 @@ a:active {
     display: none !important;
   }
 }
+
+/* Animations pour les cibles */
+@keyframes targetPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes targetHit {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Optimisations pour les cibles */
+.target {
+  will-change: transform, opacity, left, top;
+  transform: translateZ(0);
+}
+
+/* Désactivation des cibles sur mobile */
+@media (max-width: 768px) {
+  .target {
+    display: none !important;
+  }
+}
+
+/* Animations pour le message de victoire */
+@keyframes victoryGlow {
+  0% {
+    text-shadow:
+      0 0 30px rgba(255, 68, 68, 0.8),
+      0 0 60px rgba(255, 68, 68, 0.4),
+      0 0 90px rgba(255, 68, 68, 0.2);
+  }
+  100% {
+    text-shadow:
+      0 0 40px rgba(255, 68, 68, 1),
+      0 0 80px rgba(255, 68, 68, 0.6),
+      0 0 120px rgba(255, 68, 68, 0.3);
+  }
+}
+
+@keyframes victoryParticles {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.1;
+  }
+  50% {
+    transform: scale(1.1) rotate(180deg);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+    opacity: 0.1;
+  }
+}

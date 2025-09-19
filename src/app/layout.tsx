@@ -3,6 +3,8 @@ import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import MouseEffect from '../components/MouseEffect';
 import BulletImpact from '../components/BulletImpact';
+import TargetSystem from '../components/TargetSystem';
+import { TargetProvider } from '../contexts/TargetContext';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -85,20 +87,25 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={`${inter.variable} ${spaceGrotesk.variable}`}>
-        {/* Effet de souris global */}
-        <MouseEffect />
+        <TargetProvider>
+          {/* Effet de souris global */}
+          <MouseEffect />
 
-        {/* Effet d'impact de balles global */}
-        <BulletImpact />
+          {/* Effet d'impact de balles global */}
+          <BulletImpact />
 
-        {/* Skip links pour l'accessibilité */}
-        <a href="#main-content" className="skip-link">
-          Aller au contenu principal
-        </a>
-        <a href="#navigation" className="skip-link">
-          Aller à la navigation
-        </a>
-        {children}
+          {/* Système de cibles global */}
+          <TargetSystem />
+
+          {/* Skip links pour l'accessibilité */}
+          <a href="#main-content" className="skip-link">
+            Aller au contenu principal
+          </a>
+          <a href="#navigation" className="skip-link">
+            Aller à la navigation
+          </a>
+          {children}
+        </TargetProvider>
       </body>
     </html>
   );

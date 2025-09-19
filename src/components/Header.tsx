@@ -4,9 +4,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
+import { TargetCounter } from './index';
+import { useTarget } from '../contexts/TargetContext';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { score, resetScore } = useTarget();
   const pathname = usePathname();
 
   const toggleMenu = () => {
@@ -65,6 +68,9 @@ export default function Header() {
               }}
             />
           </Link>
+
+          {/* Compteur de cibles */}
+          <TargetCounter score={score} onReset={resetScore} />
 
           {/* Navigation Desktop avec effets spectaculaires */}
           <nav
