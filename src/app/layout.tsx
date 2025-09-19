@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://blackwater.example.com'),
   title: 'Black Water - Organisation Clandestine',
   description:
-    'Organisation clandestine opérant dans les ombres de Los Santos, spécialisée dans les opérations sensibles et la gestion de crises pour des clients de haut niveau.',
+    'Organisation clandestine opérant dans les ombres de Los Santos.',
   keywords: [
     'Black Water',
     'organisation clandestine',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     siteName: 'Black Water',
     title: 'Black Water - Organisation Clandestine',
     description:
-      'Organisation clandestine opérant dans les ombres de Los Santos, spécialisée dans les opérations sensibles et la gestion de crises pour des clients de haut niveau.',
+      'Organisation clandestine opérant dans les ombres de Los Santos.',
     images: [
       {
         url: '/og-image.jpg',
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Black Water - Organisation Clandestine',
     description:
-      'Organisation clandestine opérant dans les ombres de Los Santos, spécialisée dans les opérations sensibles et la gestion de crises pour des clients de haut niveau.',
+      'Organisation clandestine opérant dans les ombres de Los Santos.',
     images: ['/og-image.jpg'],
   },
   verification: {
