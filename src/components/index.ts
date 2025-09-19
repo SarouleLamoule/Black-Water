@@ -7,9 +7,6 @@ export { default as Link } from './Link';
 // Export des composants d'images optimisés
 export { default as MemberImage } from './MemberImage';
 
-// Export des composants de chargement
-export { default as LazyComponent } from './LazyComponent';
-
 // Export des animations (légères)
 export { FadeIn, StaggeredFadeIn } from './Animations';
 
@@ -23,5 +20,4 @@ export {
 // Export des composants lourds (lazy loading)
 export { default as OperatorCard } from './OperatorCard';
 export { default as OperatorModal } from './OperatorModal';
-export { default as OperationsTimeline } from './OperationsTimeline';
 export { default as ClassifiedDocument } from './ClassifiedDocument';

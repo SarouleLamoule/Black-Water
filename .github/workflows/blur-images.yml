@@ -1,0 +1,70 @@
+name: Process Images
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'assets/members-src/**/*'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'assets/members-src/**/*'
+
+jobs:
+  process-images:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check for new images
+        id: check-images
+        run: |
+          if [ -d "assets/members-src" ] && [ "$(ls -A assets/members-src)" ]; then
+            echo "has-images=true" >> $GITHUB_OUTPUT
+            echo "Found images to process"
+          else
+            echo "has-images=false" >> $GITHUB_OUTPUT
+            echo "No images to process"
+          fi
+
+      - name: Process images
+        if: steps.check-images.outputs.has-images == 'true'
+        run: npm run blur
+
+      - name: Check processed images
+        if: steps.check-images.outputs.has-images == 'true'
+        run: |
+          echo "Checking processed images..."
+          if [ -d "public/members" ]; then
+            echo "✅ Images processed successfully"
+            ls -la public/members/
+          else
+            echo "❌ No processed images found"
+            exit 1
+          fi
+
+      - name: Commit processed images
+        if: steps.check-images.outputs.has-images == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add public/members/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-process images with blur and watermark"
+            git push
+          fi

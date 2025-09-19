@@ -42,7 +42,7 @@ interface Member {
 // Fonction pour charger les données depuis le fichier JSON
 async function loadMembers(): Promise<Member[]> {
   try {
-    const filePath = path.join(process.cwd(), 'public', 'data', 'members.json');
+    const filePath = path.join(process.cwd(), 'data', 'members.json');
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const members: Member[] = JSON.parse(fileContents);
     return members;
@@ -66,12 +66,12 @@ export async function GET(request: NextRequest) {
 
     // Filtrage par statut
     if (status && status !== 'all') {
-      members = members.filter(member => member.status === status);
+      members = members.filter((member) => member.status === status);
     }
 
     // Recherche par code name
     if (search) {
-      members = members.filter(member =>
+      members = members.filter((member) =>
         member.codeName.toLowerCase().includes(search.toLowerCase())
       );
     }
@@ -80,8 +80,15 @@ export async function GET(request: NextRequest) {
     if (sortBy) {
       switch (sortBy) {
         case 'rank':
-          const rankOrder = ['Lieutenant', 'Sergent-chef', 'Sergent', 'Caporal'];
-          members.sort((a, b) => rankOrder.indexOf(a.rank) - rankOrder.indexOf(b.rank));
+          const rankOrder = [
+            'Commandant Suprême',
+            'Capitaine',
+            'Lieutenant',
+            'Opérateur',
+          ];
+          members.sort(
+            (a, b) => rankOrder.indexOf(a.rank) - rankOrder.indexOf(b.rank)
+          );
           break;
         case 'name':
           members.sort((a, b) => a.codeName.localeCompare(b.codeName));
@@ -103,18 +110,17 @@ export async function GET(request: NextRequest) {
         filters: {
           status: status || 'all',
           sortBy: sortBy || 'rank',
-          search: search || ''
-        }
-      }
+          search: search || '',
+        },
+      },
     });
-
   } catch (error) {
     console.error('API Error:', error);
     return NextResponse.json(
       {
         success: false,
         error: 'Failed to fetch members',
-        message: error instanceof Error ? error.message : 'Unknown error'
+        message: error instanceof Error ? error.message : 'Unknown error',
       },
       { status: 500 }
     );

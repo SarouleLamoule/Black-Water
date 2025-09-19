@@ -1,180 +1,220 @@
 [
   {
     "id": "1",
-    "codeName": "SHADOW",
-    "tag": "BW-001",
-    "image": "/members/shadow_blur.webp",
+    "codeName": "REAPER",
+    "tag": "S-01",
+    "image": "/members/reaper_blur.svg",
     "status": "active",
-    "rank": "Lieutenant",
-    "specialization": "Opérations spéciales",
-    "joinDate": "2023-01-15",
-    "missions": 47,
-    "description": "Expert en infiltration et reconnaissance. Spécialisé dans les opérations nocturnes et la collecte d'informations sensibles.",
-    "skills": [
-      "Infiltration",
-      "Reconnaissance",
-      "Combat rapproché",
-      "Surveillance"
-    ],
+    "rank": "Commandant Suprême",
+    "callSign": "Ombre",
+    "specialization": "spécialisation inconnue",
+    "joinDate": "1993-01-01",
+    "missions": 0,
+    "description": "Commandant suprême de Black Water. Dirige toutes les opérations stratégiques et maintient la cohésion de l'organisation.",
+    "skills": ["Commandement", "Stratégie", "Leadership", "Gestion de crise"],
     "notableMissions": [
-      "Opération Nightfall",
-      "Mission Silent Strike",
-      "Reconnaissance Alpha"
-    ],
-    "psychologicalProfile": {
-      "riskAssessment": "Élevé - Accepte les missions à haut risque",
-      "stressTolerance": "Excellent - Performance stable sous pression",
-      "teamCompatibility": "Très bon - Leader naturel",
-      "notes": "Profil psychologique stable. Recommandé pour les missions d'infiltration complexes."
-    },
-    "arsenal": {
-      "weapons": [
-        "Pistolet silencieux",
-        "Couteau de combat",
-        "Fusil de précision"
-      ],
-      "equipment": [
-        "Vêtements de camouflage",
-        "Équipement de surveillance",
-        "Dispositifs de communication"
-      ],
-      "specialties": [
-        "Infiltration nocturne",
-        "Collecte de renseignements",
-        "Neutralisation silencieuse"
-      ]
-    },
-    "recentActivities": [
-      {
-        "date": "2024-03-15",
-        "activity": "Mission de reconnaissance - Quartier de Vinewood",
-        "classification": "classified"
-      },
-      {
-        "date": "2024-03-10",
-        "activity": "Formation continue - Techniques d'infiltration",
-        "classification": "public"
-      },
-      {
-        "date": "2024-03-05",
-        "activity": "Évaluation psychologique trimestrielle",
-        "classification": "secret"
-      }
+      "Fondation de Black Water",
+      "Opérations stratégiques classifiées"
     ],
     "additionalInfo": {
       "clearanceLevel": "Top Secret",
-      "lastEvaluation": "2024-03-01",
-      "nextMission": "En attente d'assignation"
+      "lastEvaluation": "2024-01-01",
+      "nextMission": "Direction générale"
     }
   },
   {
     "id": "2",
-    "codeName": "RAVEN",
-    "tag": "BW-002",
-    "image": "/members/raven_blur.webp",
+    "codeName": "VOLK",
+    "tag": "S-02",
+    "image": "/members/volk_blur.svg",
     "status": "active",
-    "rank": "Sergent",
-    "specialization": "Sniper d'élite",
-    "joinDate": "2023-02-20",
-    "missions": 32,
-    "description": "Tireur d'élite avec une précision exceptionnelle. Expert en camouflage et en positionnement tactique.",
-    "skills": [
-      "Tir de précision",
-      "Camouflage",
-      "Observation",
-      "Patience"
-    ],
-    "notableMissions": [
-      "Opération Long Shot",
-      "Mission Clean Sweep"
-    ]
+    "rank": "Capitaine",
+    "callSign": "Loup",
+    "specialization": "spécialisation inconnue",
+    "joinDate": "1993-06-15",
+    "missions": 0,
+    "description": "Capitaine expérimenté.",
+    "skills": ["Tactique", "Coordination", "Combat", "Formation"],
+    "notableMissions": ["Opérations tactiques classifiées"],
+    "additionalInfo": {
+      "clearanceLevel": "Secret",
+      "lastEvaluation": "2024-01-01",
+      "nextMission": "Coordination tactique"
+    }
   },
   {
     "id": "3",
-    "codeName": "PHANTOM",
-    "tag": "BW-003",
-    "image": "/members/phantom_blur.webp",
-    "status": "inactive",
-    "rank": "Caporal",
-    "specialization": "Hacker",
-    "joinDate": "2023-03-10",
-    "missions": 28,
-    "description": "Expert en cybersécurité et infiltration numérique. Spécialisé dans la collecte d'informations et la protection des données.",
+    "codeName": "GHOST",
+    "tag": "S-03",
+    "image": "/members/ghost_blur.svg",
+    "status": "active",
+    "rank": "Capitaine",
+    "callSign": "Loup",
+    "specialization": "spécialisation inconnue",
+    "joinDate": "1993-08-20",
+    "missions": 0,
+    "description": "Capitaine experimenté.",
     "skills": [
-      "Cybersécurité",
-      "Hacking",
-      "Analyse de données",
-      "Cryptographie"
+      "Opérations spéciales",
+      "Infiltration",
+      "Gestion de crise",
+      "Intelligence"
     ],
-    "notableMissions": [
-      "Opération Digital Ghost",
-      "Mission Code Breaker"
-    ]
+    "notableMissions": ["Opérations spéciales classifiées"],
+    "additionalInfo": {
+      "clearanceLevel": "Secret",
+      "lastEvaluation": "2024-01-01",
+      "nextMission": "Opérations spéciales"
+    }
   },
   {
     "id": "4",
-    "codeName": "STORM",
-    "tag": "BW-004",
-    "image": "/members/storm_blur.webp",
+    "codeName": "RAVEN",
+    "tag": "S-04",
+    "image": "/members/raven_blur.svg",
     "status": "active",
-    "rank": "Sergent-chef",
-    "specialization": "Assaut",
-    "joinDate": "2023-04-05",
-    "missions": 41,
-    "description": "Spécialiste des opérations d'assaut et de libération d'otages. Expert en tactiques de combat urbain.",
+    "rank": "Lieutenant",
+    "callSign": "Faucon",
+    "specialization": "spécialisation inconnue",
+    "joinDate": "1994-03-10",
+    "missions": 0,
+    "description": "Lieutenant experimenté.",
     "skills": [
-      "Assaut",
-      "Libération d'otages",
-      "Combat urbain",
-      "Leadership"
+      "Reconnaissance",
+      "Surveillance",
+      "Intelligence",
+      "Communication"
     ],
-    "notableMissions": [
-      "Opération Thunder Strike",
-      "Mission Hostage Rescue"
-    ]
+    "notableMissions": ["Missions de reconnaissance classifiées"],
+    "additionalInfo": {
+      "clearanceLevel": "Classified",
+      "lastEvaluation": "2024-01-01",
+      "nextMission": "Reconnaissance"
+    }
   },
   {
     "id": "5",
-    "codeName": "GHOST",
-    "tag": "BW-005",
-    "image": "/members/ghost_blur.webp",
-    "status": "deceased",
+    "codeName": "UNKNOW",
+    "tag": "S-05",
+    "image": "/members/unknow_blur.svg",
+    "status": "active",
     "rank": "Lieutenant",
-    "specialization": "Infiltration",
-    "joinDate": "2022-11-12",
-    "missions": 23,
-    "description": "Maître de l'infiltration et de la discrétion. Spécialisé dans les opérations de sabotage et d'extraction.",
+    "callSign": "Faucon",
+    "specialization": "spécialisation inconnue",
+    "joinDate": "1994-05-25",
+    "missions": 0,
+    "description": "Lieutenant experimenté.",
     "skills": [
+      "Opérations clandestines",
+      "Réseaux",
       "Infiltration",
-      "Sabotage",
-      "Extraction",
-      "Discrétion"
+      "Contre-espionnage"
     ],
-    "notableMissions": [
-      "Opération Silent Death",
-      "Mission Final Extraction"
-    ]
+    "notableMissions": ["Opérations clandestines classifiées"],
+    "additionalInfo": {
+      "clearanceLevel": "Classified",
+      "lastEvaluation": "2024-01-01",
+      "nextMission": "Opérations clandestines"
+    }
   },
   {
     "id": "6",
-    "codeName": "VIPER",
-    "tag": "BW-006",
-    "image": "/members/viper_blur.webp",
+    "codeName": "TIGR3",
+    "tag": "S-06",
+    "image": "/members/tigr3_blur.svg",
     "status": "active",
-    "rank": "Caporal",
-    "specialization": "Explosifs",
-    "joinDate": "2023-05-18",
-    "missions": 19,
-    "description": "Expert en explosifs et démolition. Spécialisé dans la neutralisation de cibles et la destruction d'infrastructures.",
-    "skills": [
-      "Explosifs",
-      "Démolition",
-      "Neutralisation",
-      "Ingénierie"
-    ],
-    "notableMissions": [
-      "Opération Controlled Demolition",
-      "Mission Target Elimination"
-    ]
+    "rank": "Opérateur",
+    "callSign": "Sable",
+    "specialization": "spécialisation inconnue",
+    "joinDate": "1994-09-12",
+    "missions": 0,
+    "description": "Opérateur expérimenté.",
+    "skills": ["Combat", "Neutralisation", "Tactique", "Survie"],
+    "notableMissions": ["Missions de combat classifiées"],
+    "additionalInfo": {
+      "clearanceLevel": "Classified",
+      "lastEvaluation": "2024-01-01",
+      "nextMission": "Opérations de terrain"
+    }
+  },
+  {
+    "id": "7",
+    "codeName": "UNKNOW",
+    "tag": "S-07",
+    "image": "/members/unknow2_blur.svg",
+    "status": "active",
+    "rank": "Opérateur",
+    "callSign": "Sable",
+    "specialization": "spécialisation inconnue",
+    "joinDate": "1994-11-08",
+    "missions": 0,
+    "description": "Opérateur expérimenté.",
+    "skills": ["Logistique", "Maintenance", "Support", "Organisation"],
+    "notableMissions": ["Support logistique classifié"],
+    "additionalInfo": {
+      "clearanceLevel": "Classified",
+      "lastEvaluation": "2024-01-01",
+      "nextMission": "Support opérationnel"
+    }
+  },
+  {
+    "id": "8",
+    "codeName": "DUNE",
+    "tag": "S-08",
+    "image": "/members/dune_blur.svg",
+    "status": "active",
+    "rank": "Opérateur",
+    "callSign": "Sable",
+    "specialization": "spécialisation inconnue",
+    "joinDate": "1995-02-14",
+    "missions": 0,
+    "description": "Opérateur expérimenté.",
+    "skills": ["Transport", "Exfiltration", "Navigation", "Sécurité"],
+    "notableMissions": ["Opérations de transport classifiées"],
+    "additionalInfo": {
+      "clearanceLevel": "Classified",
+      "lastEvaluation": "2024-01-01",
+      "nextMission": "Transport sécurisé"
+    }
+  },
+  {
+    "id": "9",
+    "codeName": "GRIZZLY",
+    "tag": "S-09",
+    "image": "/members/grizzly_blur.svg",
+    "status": "active",
+    "rank": "Opérateur",
+    "callSign": "Sable",
+    "specialization": "spécialisation inconnue",
+    "joinDate": "1995-04-30",
+    "missions": 0,
+    "description": "Opérateur expérimenté.",
+    "skills": ["Protection rapprochée", "Sécurité", "Réactivité", "Vigilance"],
+    "notableMissions": ["Missions de protection classifiées"],
+    "additionalInfo": {
+      "clearanceLevel": "Classified",
+      "lastEvaluation": "2024-01-01",
+      "nextMission": "Protection rapprochée"
+    }
+  },
+  {
+    "id": "10",
+    "codeName": "ELARA",
+    "tag": "NC-42A",
+    "image": "/members/elara_blur.svg",
+    "status": "active",
+    "rank": "Opérateur",
+    "callSign": "Sable",
+    "specialization": "spécialisation inconnue",
+    "joinDate": "1995-07-18",
+    "missions": 0,
+    "description": "Opérateur expérimenté. Matricule spécial NC-42A. Robot humanoïde.",
+    "skills": ["Intelligence", "Analyse", "Cryptographie", "Communication"],
+    "notableMissions": ["Missions d'intelligence classifiées"],
+    "additionalInfo": {
+      "clearanceLevel": "Classified",
+      "lastEvaluation": "2024-01-01",
+      "nextMission": "Intelligence et analyse"
+    }
   }
 ]

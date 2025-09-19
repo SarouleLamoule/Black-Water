@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 export default function Footer() {
   return (
     <footer
@@ -14,7 +12,7 @@ export default function Footer() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
             gap: 'var(--spacing-8)',
             marginBottom: 'var(--spacing-8)',
           }}
@@ -63,147 +61,6 @@ export default function Footer() {
                 }}
               />
               Statut: [CLASSIFIED]
-            </div>
-          </div>
-
-          {/* Section Navigation */}
-          <div>
-            <h4
-              style={{
-                color: 'var(--color-text-primary)',
-                fontSize: 'var(--font-size-base)',
-                fontWeight: 'var(--font-weight-semibold)',
-                marginBottom: 'var(--spacing-4)',
-              }}
-            >
-              Navigation
-            </h4>
-            <nav
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 'var(--spacing-2)',
-              }}
-            >
-              <a
-                href="/blackwater"
-                style={{
-                  color: 'var(--color-text-secondary)',
-                  textDecoration: 'none',
-                  fontSize: 'var(--font-size-sm)',
-                  transition: 'color var(--duration-200) var(--ease-in-out)',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = 'var(--color-accent-red)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = 'var(--color-text-secondary)';
-                }}
-              >
-                Black Water
-              </a>
-              <a
-                href="/operations"
-                style={{
-                  color: 'var(--color-text-secondary)',
-                  textDecoration: 'none',
-                  fontSize: 'var(--font-size-sm)',
-                  transition: 'color var(--duration-200) var(--ease-in-out)',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = 'var(--color-accent-red)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = 'var(--color-text-secondary)';
-                }}
-              >
-                Opérations
-              </a>
-              <Link
-                href="/members"
-                style={{
-                  color: 'var(--color-text-secondary)',
-                  textDecoration: 'none',
-                  fontSize: 'var(--font-size-sm)',
-                  transition: 'color var(--duration-200) var(--ease-in-out)',
-                }}
-              >
-                Opérateurs
-              </Link>
-              <a
-                href="/press"
-                style={{
-                  color: 'var(--color-text-secondary)',
-                  textDecoration: 'none',
-                  fontSize: 'var(--font-size-sm)',
-                  transition: 'color var(--duration-200) var(--ease-in-out)',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = 'var(--color-accent-red)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = 'var(--color-text-secondary)';
-                }}
-              >
-                Presse
-              </a>
-            </nav>
-          </div>
-
-          {/* Section Contact */}
-          <div>
-            <h4
-              style={{
-                color: 'var(--color-text-primary)',
-                fontSize: 'var(--font-size-base)',
-                fontWeight: 'var(--font-weight-semibold)',
-                marginBottom: 'var(--spacing-4)',
-              }}
-            >
-              Contact
-            </h4>
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 'var(--spacing-2)',
-              }}
-            >
-              <p
-                style={{
-                  color: 'var(--color-text-secondary)',
-                  fontSize: 'var(--font-size-sm)',
-                  margin: 0,
-                }}
-              >
-                San Andreas Risk & Port Services LLC
-              </p>
-              <p
-                style={{
-                  color: 'var(--color-text-tertiary)',
-                  fontSize: 'var(--font-size-xs)',
-                  margin: 0,
-                }}
-              >
-                Los Santos, San Andreas
-              </p>
-              <a
-                href="mailto:contact@blackwater-rp.com"
-                style={{
-                  color: 'var(--color-accent-red)',
-                  textDecoration: 'none',
-                  fontSize: 'var(--font-size-sm)',
-                  transition: 'color var(--duration-200) var(--ease-in-out)',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = 'var(--color-accent-red-light)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = 'var(--color-accent-red)';
-                }}
-              >
-                contact@blackwater-rp.com
-              </a>
             </div>
           </div>
         </div>
@@ -261,8 +118,8 @@ export default function Footer() {
               margin: 0,
             }}
           >
-            © 2025 Black Water RP. Tous droits réservés. | Site développé pour
-            le RP GTA V / Los Santos
+            © 2025 Black Water RP. Tous droits réservés. | Site développé et
+            designé par SarouleLamoule
           </p>
         </div>
       </div>

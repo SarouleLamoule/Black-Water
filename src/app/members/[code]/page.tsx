@@ -4,10 +4,9 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
-import { FadeIn, StaggeredFadeIn } from '../../../components/Animations';
+import { FadeIn } from '../../../components/Animations';
 import {
   SecurityBadge,
-  RedactedStamp,
   ClassifiedWatermark,
 } from '../../../components/VisualElements';
 
@@ -293,7 +292,7 @@ export default function MemberProfilePage() {
           </div>
         </section>
 
-        {/* Section Historique */}
+        {/* Section Informations en cours d'investigation */}
         <section
           style={{
             padding: 'var(--spacing-16) 0',
@@ -302,595 +301,132 @@ export default function MemberProfilePage() {
         >
           <div className="container">
             <FadeIn>
-              <h2
-                style={{
-                  fontSize: 'var(--font-size-3xl)',
-                  fontWeight: 'var(--font-weight-bold)',
-                  color: 'var(--color-accent-red)',
-                  marginBottom: 'var(--spacing-8)',
-                  fontFamily: 'var(--font-family-display)',
-                }}
-              >
-                Historique Opérationnel
-              </h2>
-            </FadeIn>
-            <StaggeredFadeIn>
               <div
                 style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                  gap: 'var(--spacing-6)',
+                  backgroundColor: 'var(--color-bg-secondary)',
+                  border: '2px solid var(--color-accent-red)',
+                  borderRadius: 'var(--radius-xl)',
+                  padding: 'var(--spacing-12)',
+                  textAlign: 'center',
+                  position: 'relative',
+                  maxWidth: '800px',
+                  margin: '0 auto',
+                  boxShadow: 'var(--shadow-classified)',
                 }}
               >
                 <div
                   style={{
-                    backgroundColor: 'var(--color-bg-secondary)',
-                    border: '1px solid var(--color-border-primary)',
-                    borderRadius: 'var(--radius-lg)',
-                    padding: 'var(--spacing-6)',
-                    position: 'relative',
+                    position: 'absolute',
+                    top: 'var(--spacing-4)',
+                    right: 'var(--spacing-4)',
+                    backgroundColor: 'var(--color-accent-red)',
+                    color: 'var(--color-bg-primary)',
+                    padding: 'var(--spacing-2) var(--spacing-4)',
+                    borderRadius: 'var(--radius-sm)',
+                    fontSize: 'var(--font-size-xs)',
+                    fontWeight: 'var(--font-weight-bold)',
+                    letterSpacing: '0.05em',
                   }}
                 >
-                  <RedactedStamp>REDACTED</RedactedStamp>
-                  <h3
-                    style={{
-                      fontSize: 'var(--font-size-lg)',
-                      fontWeight: 'var(--font-weight-semibold)',
-                      color: 'var(--color-text-primary)',
-                      marginBottom: 'var(--spacing-4)',
-                    }}
-                  >
-                    Missions Notables
-                  </h3>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                    {member.notableMissions?.map((mission, index) => (
-                      <li
-                        key={index}
-                        style={{
-                          padding: 'var(--spacing-2) 0',
-                          borderBottom: '1px solid var(--color-border-primary)',
-                          fontSize: 'var(--font-size-sm)',
-                          color: 'var(--color-text-secondary)',
-                        }}
-                      >
-                        {mission}
-                      </li>
-                    ))}
-                  </ul>
+                  ENQUÊTE EN COURS
                 </div>
 
                 <div
                   style={{
-                    backgroundColor: 'var(--color-bg-secondary)',
-                    border: '1px solid var(--color-border-primary)',
-                    borderRadius: 'var(--radius-lg)',
-                    padding: 'var(--spacing-6)',
+                    width: '120px',
+                    height: '120px',
+                    backgroundColor: 'var(--color-bg-tertiary)',
+                    border: '3px solid var(--color-accent-red)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    margin: '0 auto var(--spacing-8)',
                     position: 'relative',
                   }}
                 >
-                  <RedactedStamp>REDACTED</RedactedStamp>
-                  <h3
-                    style={{
-                      fontSize: 'var(--font-size-lg)',
-                      fontWeight: 'var(--font-weight-semibold)',
-                      color: 'var(--color-text-primary)',
-                      marginBottom: 'var(--spacing-4)',
-                    }}
-                  >
-                    Statistiques
-                  </h3>
                   <div
                     style={{
+                      width: '60px',
+                      height: '60px',
+                      backgroundColor: 'var(--color-accent-red)',
+                      borderRadius: '50%',
                       display: 'flex',
-                      flexDirection: 'column',
-                      gap: 'var(--spacing-3)',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      animation: 'pulse 2s infinite',
                     }}
                   >
                     <div
                       style={{
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        fontSize: 'var(--font-size-sm)',
+                        width: '20px',
+                        height: '20px',
+                        backgroundColor: 'var(--color-bg-primary)',
+                        borderRadius: '50%',
                       }}
-                    >
-                      <span style={{ color: 'var(--color-text-secondary)' }}>
-                        Missions accomplies:
-                      </span>
-                      <span
-                        style={{
-                          color: 'var(--color-text-primary)',
-                          fontWeight: 'var(--font-weight-medium)',
-                        }}
-                      >
-                        {member.missions}
-                      </span>
-                    </div>
-                    <div
-                      style={{
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        fontSize: 'var(--font-size-sm)',
-                      }}
-                    >
-                      <span style={{ color: 'var(--color-text-secondary)' }}>
-                        Date d&apos;incorporation:
-                      </span>
-                      <span
-                        style={{
-                          color: 'var(--color-text-primary)',
-                          fontWeight: 'var(--font-weight-medium)',
-                        }}
-                      >
-                        {member.joinDate}
-                      </span>
-                    </div>
+                    />
                   </div>
+                </div>
+
+                <h2
+                  style={{
+                    fontSize: 'var(--font-size-3xl)',
+                    fontWeight: 'var(--font-weight-bold)',
+                    color: 'var(--color-accent-red)',
+                    marginBottom: 'var(--spacing-6)',
+                    fontFamily: 'var(--font-family-display)',
+                  }}
+                >
+                  Informations en cours d&apos;investigation
+                </h2>
+
+                <p
+                  style={{
+                    fontSize: 'var(--font-size-lg)',
+                    color: 'var(--color-text-primary)',
+                    marginBottom: 'var(--spacing-6)',
+                    lineHeight: 'var(--line-height-relaxed)',
+                  }}
+                >
+                  Le dossier de cet opérateur fait actuellement l&apos;objet
+                  d&apos;une enquête approfondie. Toutes les informations
+                  détaillées sont temporairement classifiées et inaccessibles.
+                </p>
+
+                <div
+                  style={{
+                    backgroundColor: 'var(--color-bg-tertiary)',
+                    border: '1px solid var(--color-border-primary)',
+                    borderRadius: 'var(--radius-lg)',
+                    padding: 'var(--spacing-6)',
+                    marginTop: 'var(--spacing-8)',
+                  }}
+                >
+                  <p
+                    style={{
+                      fontSize: 'var(--font-size-sm)',
+                      color: 'var(--color-text-secondary)',
+                      margin: 0,
+                      fontStyle: 'italic',
+                    }}
+                  >
+                    ⚠️ Accès restreint - Niveau de sécurité requis : TOP SECRET
+                  </p>
+                  <p
+                    style={{
+                      fontSize: 'var(--font-size-xs)',
+                      color: 'var(--color-text-tertiary)',
+                      margin: 'var(--spacing-2) 0 0 0',
+                    }}
+                  >
+                    Les informations seront déclassifiées une fois
+                    l&apos;enquête terminée.
+                  </p>
                 </div>
               </div>
-            </StaggeredFadeIn>
+            </FadeIn>
           </div>
         </section>
-
-        {/* Section Profil Psychologique */}
-        {member.psychologicalProfile && (
-          <section
-            style={{
-              padding: 'var(--spacing-16) 0',
-              backgroundColor: 'var(--color-bg-secondary)',
-            }}
-          >
-            <div className="container">
-              <FadeIn>
-                <h2
-                  style={{
-                    fontSize: 'var(--font-size-3xl)',
-                    fontWeight: 'var(--font-weight-bold)',
-                    color: 'var(--color-accent-red)',
-                    marginBottom: 'var(--spacing-8)',
-                    fontFamily: 'var(--font-family-display)',
-                  }}
-                >
-                  Profil Psychologique
-                </h2>
-              </FadeIn>
-              <StaggeredFadeIn>
-                <div
-                  style={{
-                    backgroundColor: 'var(--color-bg-primary)',
-                    border: '1px solid var(--color-border-primary)',
-                    borderRadius: 'var(--radius-lg)',
-                    padding: 'var(--spacing-8)',
-                    position: 'relative',
-                  }}
-                >
-                  <RedactedStamp>REDACTED</RedactedStamp>
-                  <div
-                    style={{
-                      display: 'grid',
-                      gridTemplateColumns:
-                        'repeat(auto-fit, minmax(250px, 1fr))',
-                      gap: 'var(--spacing-6)',
-                    }}
-                  >
-                    <div>
-                      <h4
-                        style={{
-                          fontSize: 'var(--font-size-base)',
-                          fontWeight: 'var(--font-weight-semibold)',
-                          color: 'var(--color-text-primary)',
-                          marginBottom: 'var(--spacing-2)',
-                        }}
-                      >
-                        Évaluation des Risques
-                      </h4>
-                      <p
-                        style={{
-                          fontSize: 'var(--font-size-sm)',
-                          color: 'var(--color-text-secondary)',
-                        }}
-                      >
-                        {member.psychologicalProfile.riskAssessment}
-                      </p>
-                    </div>
-                    <div>
-                      <h4
-                        style={{
-                          fontSize: 'var(--font-size-base)',
-                          fontWeight: 'var(--font-weight-semibold)',
-                          color: 'var(--color-text-primary)',
-                          marginBottom: 'var(--spacing-2)',
-                        }}
-                      >
-                        Tolérance au Stress
-                      </h4>
-                      <p
-                        style={{
-                          fontSize: 'var(--font-size-sm)',
-                          color: 'var(--color-text-secondary)',
-                        }}
-                      >
-                        {member.psychologicalProfile.stressTolerance}
-                      </p>
-                    </div>
-                    <div>
-                      <h4
-                        style={{
-                          fontSize: 'var(--font-size-base)',
-                          fontWeight: 'var(--font-weight-semibold)',
-                          color: 'var(--color-text-primary)',
-                          marginBottom: 'var(--spacing-2)',
-                        }}
-                      >
-                        Compatibilité Équipe
-                      </h4>
-                      <p
-                        style={{
-                          fontSize: 'var(--font-size-sm)',
-                          color: 'var(--color-text-secondary)',
-                        }}
-                      >
-                        {member.psychologicalProfile.teamCompatibility}
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{ marginTop: 'var(--spacing-6)' }}>
-                    <h4
-                      style={{
-                        fontSize: 'var(--font-size-base)',
-                        fontWeight: 'var(--font-weight-semibold)',
-                        color: 'var(--color-text-primary)',
-                        marginBottom: 'var(--spacing-2)',
-                      }}
-                    >
-                      Notes du Psychologue
-                    </h4>
-                    <p
-                      style={{
-                        fontSize: 'var(--font-size-sm)',
-                        color: 'var(--color-text-secondary)',
-                        lineHeight: 'var(--line-height-relaxed)',
-                      }}
-                    >
-                      {member.psychologicalProfile.notes}
-                    </p>
-                  </div>
-                </div>
-              </StaggeredFadeIn>
-            </div>
-          </section>
-        )}
-
-        {/* Section Arsenal des Compétences */}
-        {member.arsenal && (
-          <section
-            style={{
-              padding: 'var(--spacing-16) 0',
-              backgroundColor: 'var(--color-bg-primary)',
-            }}
-          >
-            <div className="container">
-              <FadeIn>
-                <h2
-                  style={{
-                    fontSize: 'var(--font-size-3xl)',
-                    fontWeight: 'var(--font-weight-bold)',
-                    color: 'var(--color-accent-red)',
-                    marginBottom: 'var(--spacing-8)',
-                    fontFamily: 'var(--font-family-display)',
-                  }}
-                >
-                  Arsenal des Compétences
-                </h2>
-              </FadeIn>
-              <StaggeredFadeIn>
-                <div
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                    gap: 'var(--spacing-6)',
-                  }}
-                >
-                  <div
-                    style={{
-                      backgroundColor: 'var(--color-bg-secondary)',
-                      border: '1px solid var(--color-border-primary)',
-                      borderRadius: 'var(--radius-lg)',
-                      padding: 'var(--spacing-6)',
-                      position: 'relative',
-                    }}
-                  >
-                    <RedactedStamp>REDACTED</RedactedStamp>
-                    <h3
-                      style={{
-                        fontSize: 'var(--font-size-lg)',
-                        fontWeight: 'var(--font-weight-semibold)',
-                        color: 'var(--color-text-primary)',
-                        marginBottom: 'var(--spacing-4)',
-                      }}
-                    >
-                      Armement
-                    </h3>
-                    <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                      {member.arsenal.weapons.map((weapon, index) => (
-                        <li
-                          key={index}
-                          style={{
-                            padding: 'var(--spacing-2) 0',
-                            fontSize: 'var(--font-size-sm)',
-                            color: 'var(--color-text-secondary)',
-                          }}
-                        >
-                          • {weapon}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div
-                    style={{
-                      backgroundColor: 'var(--color-bg-secondary)',
-                      border: '1px solid var(--color-border-primary)',
-                      borderRadius: 'var(--radius-lg)',
-                      padding: 'var(--spacing-6)',
-                      position: 'relative',
-                    }}
-                  >
-                    <RedactedStamp>REDACTED</RedactedStamp>
-                    <h3
-                      style={{
-                        fontSize: 'var(--font-size-lg)',
-                        fontWeight: 'var(--font-weight-semibold)',
-                        color: 'var(--color-text-primary)',
-                        marginBottom: 'var(--spacing-4)',
-                      }}
-                    >
-                      Équipement
-                    </h3>
-                    <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                      {member.arsenal.equipment.map((item, index) => (
-                        <li
-                          key={index}
-                          style={{
-                            padding: 'var(--spacing-2) 0',
-                            fontSize: 'var(--font-size-sm)',
-                            color: 'var(--color-text-secondary)',
-                          }}
-                        >
-                          • {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div
-                    style={{
-                      backgroundColor: 'var(--color-bg-secondary)',
-                      border: '1px solid var(--color-border-primary)',
-                      borderRadius: 'var(--radius-lg)',
-                      padding: 'var(--spacing-6)',
-                      position: 'relative',
-                    }}
-                  >
-                    <RedactedStamp>REDACTED</RedactedStamp>
-                    <h3
-                      style={{
-                        fontSize: 'var(--font-size-lg)',
-                        fontWeight: 'var(--font-weight-semibold)',
-                        color: 'var(--color-text-primary)',
-                        marginBottom: 'var(--spacing-4)',
-                      }}
-                    >
-                      Spécialités
-                    </h3>
-                    <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                      {member.arsenal.specialties.map((specialty, index) => (
-                        <li
-                          key={index}
-                          style={{
-                            padding: 'var(--spacing-2) 0',
-                            fontSize: 'var(--font-size-sm)',
-                            color: 'var(--color-text-secondary)',
-                          }}
-                        >
-                          • {specialty}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </StaggeredFadeIn>
-            </div>
-          </section>
-        )}
-
-        {/* Section Activités Récentes */}
-        {member.recentActivities && (
-          <section
-            style={{
-              padding: 'var(--spacing-16) 0',
-              backgroundColor: 'var(--color-bg-secondary)',
-            }}
-          >
-            <div className="container">
-              <FadeIn>
-                <h2
-                  style={{
-                    fontSize: 'var(--font-size-3xl)',
-                    fontWeight: 'var(--font-weight-bold)',
-                    color: 'var(--color-accent-red)',
-                    marginBottom: 'var(--spacing-8)',
-                    fontFamily: 'var(--font-family-display)',
-                  }}
-                >
-                  Activités Récentes
-                </h2>
-              </FadeIn>
-              <StaggeredFadeIn>
-                <div
-                  style={{
-                    backgroundColor: 'var(--color-bg-primary)',
-                    border: '1px solid var(--color-border-primary)',
-                    borderRadius: 'var(--radius-lg)',
-                    padding: 'var(--spacing-6)',
-                    position: 'relative',
-                  }}
-                >
-                  <RedactedStamp>REDACTED</RedactedStamp>
-                  <div
-                    style={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: 'var(--spacing-4)',
-                    }}
-                  >
-                    {member.recentActivities.map((activity, index) => (
-                      <div
-                        key={index}
-                        style={{
-                          display: 'flex',
-                          justifyContent: 'space-between',
-                          alignItems: 'center',
-                          padding: 'var(--spacing-3) 0',
-                          borderBottom: '1px solid var(--color-border-primary)',
-                        }}
-                      >
-                        <div>
-                          <p
-                            style={{
-                              fontSize: 'var(--font-size-sm)',
-                              color: 'var(--color-text-primary)',
-                              margin: 0,
-                            }}
-                          >
-                            {activity.activity}
-                          </p>
-                          <p
-                            style={{
-                              fontSize: 'var(--font-size-xs)',
-                              color: 'var(--color-text-tertiary)',
-                              margin: 0,
-                            }}
-                          >
-                            {activity.date}
-                          </p>
-                        </div>
-                        <SecurityBadge level={activity.classification} />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </StaggeredFadeIn>
-            </div>
-          </section>
-        )}
-
-        {/* Section Informations Supplémentaires */}
-        {member.additionalInfo && (
-          <section
-            style={{
-              padding: 'var(--spacing-16) 0',
-              backgroundColor: 'var(--color-bg-primary)',
-            }}
-          >
-            <div className="container">
-              <FadeIn>
-                <h2
-                  style={{
-                    fontSize: 'var(--font-size-3xl)',
-                    fontWeight: 'var(--font-weight-bold)',
-                    color: 'var(--color-accent-red)',
-                    marginBottom: 'var(--spacing-8)',
-                    fontFamily: 'var(--font-family-display)',
-                  }}
-                >
-                  Informations Supplémentaires
-                </h2>
-              </FadeIn>
-              <StaggeredFadeIn>
-                <div
-                  style={{
-                    backgroundColor: 'var(--color-bg-secondary)',
-                    border: '1px solid var(--color-border-primary)',
-                    borderRadius: 'var(--radius-lg)',
-                    padding: 'var(--spacing-8)',
-                    position: 'relative',
-                  }}
-                >
-                  <RedactedStamp>REDACTED</RedactedStamp>
-                  <div
-                    style={{
-                      display: 'grid',
-                      gridTemplateColumns:
-                        'repeat(auto-fit, minmax(250px, 1fr))',
-                      gap: 'var(--spacing-6)',
-                    }}
-                  >
-                    <div>
-                      <h4
-                        style={{
-                          fontSize: 'var(--font-size-base)',
-                          fontWeight: 'var(--font-weight-semibold)',
-                          color: 'var(--color-text-primary)',
-                          marginBottom: 'var(--spacing-2)',
-                        }}
-                      >
-                        Niveau d&apos;Habilitation
-                      </h4>
-                      <p
-                        style={{
-                          fontSize: 'var(--font-size-sm)',
-                          color: 'var(--color-text-secondary)',
-                        }}
-                      >
-                        {member.additionalInfo.clearanceLevel}
-                      </p>
-                    </div>
-                    <div>
-                      <h4
-                        style={{
-                          fontSize: 'var(--font-size-base)',
-                          fontWeight: 'var(--font-weight-semibold)',
-                          color: 'var(--color-text-primary)',
-                          marginBottom: 'var(--spacing-2)',
-                        }}
-                      >
-                        Dernière Évaluation
-                      </h4>
-                      <p
-                        style={{
-                          fontSize: 'var(--font-size-sm)',
-                          color: 'var(--color-text-secondary)',
-                        }}
-                      >
-                        {member.additionalInfo.lastEvaluation}
-                      </p>
-                    </div>
-                    <div>
-                      <h4
-                        style={{
-                          fontSize: 'var(--font-size-base)',
-                          fontWeight: 'var(--font-weight-semibold)',
-                          color: 'var(--color-text-primary)',
-                          marginBottom: 'var(--spacing-2)',
-                        }}
-                      >
-                        Prochaine Mission
-                      </h4>
-                      <p
-                        style={{
-                          fontSize: 'var(--font-size-sm)',
-                          color: 'var(--color-text-secondary)',
-                        }}
-                      >
-                        {member.additionalInfo.nextMission}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </StaggeredFadeIn>
-            </div>
-          </section>
-        )}
       </main>
 
       <Footer />

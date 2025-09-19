@@ -6,7 +6,7 @@
   </defs>
   <rect width="200" height="200" fill="#1a1a1a"/>
   <circle cx="100" cy="100" r="80" fill="#2a2a2a" filter="url(#blur)"/>
-  <text x="100" y="110" text-anchor="middle" fill="#ff0000" font-family="monospace" font-size="24" font-weight="bold" filter="url(#blur)">GR</text>
-  <text x="100" y="140" text-anchor="middle" fill="#ff0000" font-family="monospace" font-size="12" filter="url(#blur)">S-09</text>
+  <text x="100" y="110" text-anchor="middle" fill="#ff0000" font-family="monospace" font-size="24" font-weight="bold" filter="url(#blur)">VO</text>
+  <text x="100" y="140" text-anchor="middle" fill="#ff0000" font-family="monospace" font-size="12" filter="url(#blur)">S-02</text>
   <text x="100" y="180" text-anchor="middle" fill="#ff0000" font-family="monospace" font-size="10" filter="url(#blur)">CLASSIFIED</text>
 </svg>

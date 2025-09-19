@@ -2,12 +2,18 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const isActive = (path: string) => {
+    return pathname === path;
   };
 
   return (
@@ -74,7 +80,9 @@ export default function Header() {
             <Link
               href="/about"
               style={{
-                color: 'var(--color-text-primary)',
+                color: isActive('/about')
+                  ? 'var(--color-accent-red)'
+                  : 'var(--color-text-primary)',
                 textDecoration: 'none',
                 fontSize: 'var(--font-size-sm)',
                 fontWeight: 'var(--font-weight-medium)',
@@ -82,85 +90,41 @@ export default function Header() {
                 position: 'relative',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.color = 'var(--color-accent-red)';
+                if (!isActive('/about')) {
+                  e.currentTarget.style.color = 'var(--color-accent-red)';
+                }
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.color = 'var(--color-text-primary)';
+                if (!isActive('/about')) {
+                  e.currentTarget.style.color = 'var(--color-text-primary)';
+                }
               }}
             >
-              À propos
-            </Link>
-            <Link
-              href="/operations"
-              style={{
-                color: 'var(--color-text-primary)',
-                textDecoration: 'none',
-                fontSize: 'var(--font-size-sm)',
-                fontWeight: 'var(--font-weight-medium)',
-                transition: 'color var(--duration-200) var(--ease-in-out)',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = 'var(--color-accent-red)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = 'var(--color-text-primary)';
-              }}
-            >
-              Opérations
-            </Link>
-            <Link
-              href="/team"
-              style={{
-                color: 'var(--color-text-primary)',
-                textDecoration: 'none',
-                fontSize: 'var(--font-size-sm)',
-                fontWeight: 'var(--font-weight-medium)',
-                transition: 'color var(--duration-200) var(--ease-in-out)',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = 'var(--color-accent-red)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = 'var(--color-text-primary)';
-              }}
-            >
-              Équipe
+              Qui sommes nous ?
             </Link>
             <Link
               href="/members"
               style={{
-                color: 'var(--color-accent-red)',
-                textDecoration: 'none',
-                fontSize: 'var(--font-size-sm)',
-                fontWeight: 'var(--font-weight-semibold)',
-                transition: 'color var(--duration-200) var(--ease-in-out)',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = 'var(--color-accent-red)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = 'var(--color-accent-red)';
-              }}
-            >
-              Membres
-            </Link>
-            <Link
-              href="/press"
-              style={{
-                color: 'var(--color-text-primary)',
+                color: isActive('/members')
+                  ? 'var(--color-accent-red)'
+                  : 'var(--color-text-primary)',
                 textDecoration: 'none',
                 fontSize: 'var(--font-size-sm)',
                 fontWeight: 'var(--font-weight-medium)',
                 transition: 'color var(--duration-200) var(--ease-in-out)',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.color = 'var(--color-accent-red)';
+                if (!isActive('/members')) {
+                  e.currentTarget.style.color = 'var(--color-accent-red)';
+                }
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.color = 'var(--color-text-primary)';
+                if (!isActive('/members')) {
+                  e.currentTarget.style.color = 'var(--color-text-primary)';
+                }
               }}
             >
-              Presse
+              Membres
             </Link>
           </nav>
 
@@ -205,7 +169,9 @@ export default function Header() {
               href="/about"
               onClick={() => setIsMenuOpen(false)}
               style={{
-                color: 'var(--color-text-primary)',
+                color: isActive('/about')
+                  ? 'var(--color-accent-red)'
+                  : 'var(--color-text-primary)',
                 textDecoration: 'none',
                 fontSize: 'var(--font-size-base)',
                 fontWeight: 'var(--font-weight-medium)',
@@ -213,13 +179,15 @@ export default function Header() {
                 transition: 'color var(--duration-200) var(--ease-in-out)',
               }}
             >
-              À propos
+              Qui sommes nous ?
             </Link>
             <Link
-              href="/operations"
+              href="/members"
               onClick={() => setIsMenuOpen(false)}
               style={{
-                color: 'var(--color-text-primary)',
+                color: isActive('/members')
+                  ? 'var(--color-accent-red)'
+                  : 'var(--color-text-primary)',
                 textDecoration: 'none',
                 fontSize: 'var(--font-size-base)',
                 fontWeight: 'var(--font-weight-medium)',
@@ -227,35 +195,7 @@ export default function Header() {
                 transition: 'color var(--duration-200) var(--ease-in-out)',
               }}
             >
-              Opérations
-            </Link>
-            <Link
-              href="/team"
-              onClick={() => setIsMenuOpen(false)}
-              style={{
-                color: 'var(--color-text-primary)',
-                textDecoration: 'none',
-                fontSize: 'var(--font-size-base)',
-                fontWeight: 'var(--font-weight-medium)',
-                padding: 'var(--spacing-2) 0',
-                transition: 'color var(--duration-200) var(--ease-in-out)',
-              }}
-            >
-              Équipe
-            </Link>
-            <Link
-              href="/press"
-              onClick={() => setIsMenuOpen(false)}
-              style={{
-                color: 'var(--color-text-primary)',
-                textDecoration: 'none',
-                fontSize: 'var(--font-size-base)',
-                fontWeight: 'var(--font-weight-medium)',
-                padding: 'var(--spacing-2) 0',
-                transition: 'color var(--duration-200) var(--ease-in-out)',
-              }}
-            >
-              Presse
+              Membres
             </Link>
           </nav>
         )}

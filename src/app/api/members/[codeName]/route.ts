@@ -42,7 +42,7 @@ interface Member {
 // Fonction pour charger les données depuis le fichier JSON
 async function loadMembers(): Promise<Member[]> {
   try {
-    const filePath = path.join(process.cwd(), 'public', 'data', 'members.json');
+    const filePath = path.join(process.cwd(), 'data', 'members.json');
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const members: Member[] = JSON.parse(fileContents);
     return members;

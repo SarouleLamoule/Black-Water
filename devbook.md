@@ -187,21 +187,22 @@
 - [x] Connecter le repository GitHub à Vercel (automatique)
 - [x] Configurer le déploiement automatique sur push main (automatique)
 - [x] Configurer les variables d'environnement si nécessaire (non nécessaire pour ce projet)
-- [ ] Tester le déploiement (à faire après import)
+- [x] Tester le déploiement (à faire après import)
 
 ### 5.2 GitHub Actions
 
-- [ ] Créer le workflow `validate-json` (ajv + schema)
-- [ ] Créer le workflow `blur-images` (sharp) avant build
-- [ ] Configurer les tests de validation JSON
-- [ ] Tester les workflows CI
+- [x] Créer le workflow `validate-json` (ajv + schema)
+- [x] Créer le workflow `blur-images` (sharp) avant build
+- [x] Créer le workflow `build-check` (lint + build)
+- [x] Configurer les tests de validation JSON
+- [x] Tester les workflows CI
 
 ### 5.3 Documentation
 
-- [ ] Créer le README avec setup et structure
-- [ ] Documenter la structure `/data`
-- [ ] Documenter les scripts (blur, validate)
-- [ ] Créer le template de PR avec checklist
+- [x] Créer le README avec setup et structure
+- [x] Documenter la structure `/data`
+- [x] Documenter les scripts (blur, validate)
+- [x] Créer le template de PR avec checklist
 
 ---
 

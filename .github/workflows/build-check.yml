@@ -1,0 +1,65 @@
+name: Build Check
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run linting
+        run: npm run lint
+
+      - name: Check TypeScript
+        run: npx tsc --noEmit
+
+      - name: Build application
+        run: npm run build
+
+      - name: Check build output
+        run: |
+          echo "Checking build output..."
+          if [ -d ".next" ]; then
+            echo "✅ Build successful"
+            echo "Build size:"
+            du -sh .next/
+          else
+            echo "❌ Build failed - no .next directory"
+            exit 1
+          fi
+
+      - name: Check for build errors
+        run: |
+          if [ -f ".next/build-manifest.json" ]; then
+            echo "✅ Build manifest exists"
+          else
+            echo "❌ Build manifest missing"
+            exit 1
+          fi
+
+      - name: Verify static pages
+        run: |
+          echo "Checking static pages..."
+          if [ -d ".next/server/app" ]; then
+            echo "✅ Server pages generated"
+            find .next/server/app -name "*.html" | head -5
+          else
+            echo "❌ No server pages found"
+            exit 1
+          fi
