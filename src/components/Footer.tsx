@@ -1,0 +1,271 @@
+import Link from 'next/link';
+
+export default function Footer() {
+  return (
+    <footer
+      style={{
+        backgroundColor: 'var(--color-bg-secondary)',
+        borderTop: '1px solid var(--color-border-primary)',
+        marginTop: 'auto',
+        padding: 'var(--spacing-8) 0',
+      }}
+    >
+      <div className="container">
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gap: 'var(--spacing-8)',
+            marginBottom: 'var(--spacing-8)',
+          }}
+        >
+          {/* Section Black Water */}
+          <div>
+            <h3
+              style={{
+                color: 'var(--color-accent-red)',
+                fontSize: 'var(--font-size-lg)',
+                fontWeight: 'var(--font-weight-semibold)',
+                marginBottom: 'var(--spacing-4)',
+                fontFamily: 'var(--font-family-display)',
+              }}
+            >
+              BLACK WATER
+            </h3>
+            <p
+              style={{
+                color: 'var(--color-text-secondary)',
+                fontSize: 'var(--font-size-sm)',
+                lineHeight: 'var(--line-height-relaxed)',
+                marginBottom: 'var(--spacing-4)',
+              }}
+            >
+              Organisation clandestine opérant dans les ombres de Los Santos
+              depuis 1993.
+            </p>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 'var(--spacing-2)',
+                fontSize: 'var(--font-size-xs)',
+                color: 'var(--color-text-tertiary)',
+              }}
+            >
+              <span
+                style={{
+                  display: 'inline-block',
+                  width: '6px',
+                  height: '6px',
+                  backgroundColor: 'var(--color-accent-red)',
+                  borderRadius: '50%',
+                  boxShadow: 'var(--shadow-classified)',
+                }}
+              />
+              Statut: [CLASSIFIED]
+            </div>
+          </div>
+
+          {/* Section Navigation */}
+          <div>
+            <h4
+              style={{
+                color: 'var(--color-text-primary)',
+                fontSize: 'var(--font-size-base)',
+                fontWeight: 'var(--font-weight-semibold)',
+                marginBottom: 'var(--spacing-4)',
+              }}
+            >
+              Navigation
+            </h4>
+            <nav
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 'var(--spacing-2)',
+              }}
+            >
+              <a
+                href="/blackwater"
+                style={{
+                  color: 'var(--color-text-secondary)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--font-size-sm)',
+                  transition: 'color var(--duration-200) var(--ease-in-out)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = 'var(--color-accent-red)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'var(--color-text-secondary)';
+                }}
+              >
+                Black Water
+              </a>
+              <a
+                href="/operations"
+                style={{
+                  color: 'var(--color-text-secondary)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--font-size-sm)',
+                  transition: 'color var(--duration-200) var(--ease-in-out)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = 'var(--color-accent-red)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'var(--color-text-secondary)';
+                }}
+              >
+                Opérations
+              </a>
+              <Link
+                href="/members"
+                style={{
+                  color: 'var(--color-text-secondary)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--font-size-sm)',
+                  transition: 'color var(--duration-200) var(--ease-in-out)',
+                }}
+              >
+                Opérateurs
+              </Link>
+              <a
+                href="/press"
+                style={{
+                  color: 'var(--color-text-secondary)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--font-size-sm)',
+                  transition: 'color var(--duration-200) var(--ease-in-out)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = 'var(--color-accent-red)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'var(--color-text-secondary)';
+                }}
+              >
+                Presse
+              </a>
+            </nav>
+          </div>
+
+          {/* Section Contact */}
+          <div>
+            <h4
+              style={{
+                color: 'var(--color-text-primary)',
+                fontSize: 'var(--font-size-base)',
+                fontWeight: 'var(--font-weight-semibold)',
+                marginBottom: 'var(--spacing-4)',
+              }}
+            >
+              Contact
+            </h4>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 'var(--spacing-2)',
+              }}
+            >
+              <p
+                style={{
+                  color: 'var(--color-text-secondary)',
+                  fontSize: 'var(--font-size-sm)',
+                  margin: 0,
+                }}
+              >
+                San Andreas Risk & Port Services LLC
+              </p>
+              <p
+                style={{
+                  color: 'var(--color-text-tertiary)',
+                  fontSize: 'var(--font-size-xs)',
+                  margin: 0,
+                }}
+              >
+                Los Santos, San Andreas
+              </p>
+              <a
+                href="mailto:contact@blackwater-rp.com"
+                style={{
+                  color: 'var(--color-accent-red)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--font-size-sm)',
+                  transition: 'color var(--duration-200) var(--ease-in-out)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = 'var(--color-accent-red-light)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'var(--color-accent-red)';
+                }}
+              >
+                contact@blackwater-rp.com
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Disclaimer RP */}
+        <div
+          style={{
+            borderTop: '1px solid var(--color-border-primary)',
+            paddingTop: 'var(--spacing-6)',
+            textAlign: 'center',
+          }}
+        >
+          <div
+            style={{
+              backgroundColor: 'var(--color-bg-tertiary)',
+              border: '1px solid var(--color-accent-red)',
+              borderRadius: 'var(--radius-lg)',
+              padding: 'var(--spacing-4)',
+              marginBottom: 'var(--spacing-4)',
+            }}
+          >
+            <p
+              style={{
+                color: 'var(--color-text-secondary)',
+                fontSize: 'var(--font-size-sm)',
+                lineHeight: 'var(--line-height-relaxed)',
+                margin: 0,
+                marginBottom: 'var(--spacing-2)',
+              }}
+            >
+              ⚠️ <strong>DISCLAIMER IMPORTANT</strong> ⚠️
+            </p>
+            <p
+              style={{
+                color: 'var(--color-text-tertiary)',
+                fontSize: 'var(--font-size-xs)',
+                lineHeight: 'var(--line-height-relaxed)',
+                margin: 0,
+              }}
+            >
+              Ce site est une œuvre de fiction créée dans le cadre d&apos;un jeu
+              de rôle (RP) sur Grand Theft Auto V. Tous les contenus,
+              personnages, organisations et événements sont purement fictifs et
+              ne visent aucune personne réelle. Aucune incitation à la violence
+              ou à des activités illégales n&apos;est encouragée. Toute
+              ressemblance avec des personnes ou des situations réelles serait
+              purement fortuite.
+            </p>
+          </div>
+
+          <p
+            style={{
+              color: 'var(--color-text-muted)',
+              fontSize: 'var(--font-size-xs)',
+              margin: 0,
+            }}
+          >
+            © 2025 Black Water RP. Tous droits réservés. | Site développé pour
+            le RP GTA V / Los Santos
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}

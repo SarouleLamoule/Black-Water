@@ -1,0 +1,41 @@
+{
+  "histoire": {
+    "resume": "Black Water est une organisation clandestine opérant dans les ombres de Los Santos depuis plus de deux décennies. Fondée par d'anciens militaires et agents de renseignement, l'organisation s'est spécialisée dans les opérations sensibles et la logistique discrète.",
+    "fondation": "1993",
+    "fondateurs": "[REDACTED]",
+    "evolution": "De simple groupe de sécurité privée à réseau clandestin sophistiqué"
+  },
+  "doctrine": {
+    "vision": "Maintenir l'ordre dans le chaos par des moyens non conventionnels",
+    "principes": [
+      "Discrétion absolue",
+      "Efficacité opérationnelle",
+      "Loyauté envers l'organisation",
+      "Adaptabilité tactique"
+    ],
+    "objectifs": [
+      "Stabilisation des zones sensibles",
+      "Logistique sécurisée",
+      "Renseignement opérationnel",
+      "Protection des intérêts clients"
+    ]
+  },
+  "facadeLegale": {
+    "nom": "San Andreas Risk & Port Services LLC",
+    "secteur": "Sécurité privée et logistique portuaire",
+    "activites": [
+      "Surveillance de sites industriels",
+      "Transport sécurisé de marchandises",
+      "Formation en sécurité",
+      "Conseil en gestion des risques"
+    ],
+    "clients": "Entreprises, institutions, particuliers fortunés"
+  },
+  "codesInternes": {
+    "grey": "Opération de surveillance passive",
+    "brume": "Opération de couverture/feinte",
+    "corbeau": "Renseignement et collecte d'informations",
+    "sableNoir": "Opération de sécurisation de zone",
+    "black": "Opération de dernière chance/ultime recours"
+  }
+}

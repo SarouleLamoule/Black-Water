@@ -1,0 +1,53 @@
+{
+  "operations": [
+    {
+      "id": "OP-001",
+      "nom": "RIVAGE FROID",
+      "date": "2025-08-29",
+      "statut": "Terminée",
+      "description": "Opération de surveillance et maintenance préventive sur site industriel",
+      "details": "[REDACTED]",
+      "equipe": ["Dune", "[REDACTED]"],
+      "resultat": "Succès - Objectifs atteints"
+    },
+    {
+      "id": "OP-002",
+      "nom": "[REDACTED]",
+      "date": "2025-08-15",
+      "statut": "En cours",
+      "description": "Opération de renseignement en zone urbaine",
+      "details": "[CLASSIFIED]",
+      "equipe": "[REDACTED]",
+      "resultat": "En évaluation"
+    },
+    {
+      "id": "OP-003",
+      "nom": "SABLE NOIR",
+      "date": "2025-07-22",
+      "statut": "Terminée",
+      "description": "Sécurisation de zone sensible suite à incident",
+      "details": "[REDACTED]",
+      "equipe": "[REDACTED]",
+      "resultat": "Zone sécurisée - Mission accomplie"
+    }
+  ],
+  "chronologie": [
+    {
+      "annee": "2025",
+      "evenements": [
+        "Q3 2025 : Intensification des opérations de surveillance",
+        "Q2 2025 : Restructuration des équipes opérationnelles",
+        "Q1 2025 : Nouveaux protocoles de sécurité mis en place"
+      ]
+    },
+    {
+      "annee": "2024",
+      "evenements": [
+        "Q4 2024 : Expansion des activités logistiques",
+        "Q3 2024 : [REDACTED]",
+        "Q2 2024 : Formation des nouveaux opérateurs",
+        "Q1 2024 : Mise à jour des équipements"
+      ]
+    }
+  ]
+}
