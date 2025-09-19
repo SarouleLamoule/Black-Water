@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import MouseEffect from '../components/MouseEffect';
+import BulletImpact from '../components/BulletImpact';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -18,6 +19,11 @@ export const metadata: Metadata = {
   title: 'Black Water - Organisation Clandestine',
   description:
     'Organisation clandestine opérant dans les ombres de Los Santos.',
+  icons: {
+    icon: '/icone.ico',
+    shortcut: '/icone.ico',
+    apple: '/icone.ico',
+  },
   keywords: [
     'Black Water',
     'organisation clandestine',
@@ -81,6 +87,9 @@ export default function RootLayout({
       <body className={`${inter.variable} ${spaceGrotesk.variable}`}>
         {/* Effet de souris global */}
         <MouseEffect />
+
+        {/* Effet d'impact de balles global */}
+        <BulletImpact />
 
         {/* Skip links pour l'accessibilité */}
         <a href="#main-content" className="skip-link">

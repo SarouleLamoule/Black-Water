@@ -1,19 +1,19 @@
 {
-  "timestamp": "2025-09-19T12:37:02.113Z",
+  "timestamp": "2025-09-19T15:38:00.322Z",
   "metrics": {
-    "bundleSize": 2546,
+    "bundleSize": 2559,
     "bundleFiles": 112,
-    "cssSize": 27,
-    "keyframesCount": 77,
-    "animationCount": 49,
+    "cssSize": 35,
+    "keyframesCount": 83,
+    "animationCount": 50,
     "animationClassCount": 0,
-    "optimizedProps": 308,
-    "unoptimizedProps": 21,
-    "performanceScore": 94
+    "optimizedProps": 360,
+    "unoptimizedProps": 54,
+    "performanceScore": 87
   },
   "warnings": [
-    "Bundle size (2546KB) exceeds threshold (500KB)",
-    "Too many keyframes (77). Consider optimizing animations."
+    "Bundle size (2559KB) exceeds threshold (500KB)",
+    "Too many keyframes (83). Consider optimizing animations."
   ],
   "recommendations": [
     "Consider code splitting for large bundles",

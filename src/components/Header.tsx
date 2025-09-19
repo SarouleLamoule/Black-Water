@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 
@@ -47,25 +48,22 @@ export default function Header() {
               display: 'flex',
               alignItems: 'center',
               textDecoration: 'none',
-              color: 'var(--color-accent-red)',
-              fontSize: 'var(--font-size-xl)',
-              fontWeight: 'var(--font-weight-bold)',
-              fontFamily: 'var(--font-family-display)',
-              letterSpacing: '0.05em',
             }}
           >
-            <span
+            <Image
+              src="/logo.png"
+              alt="Black Water Logo"
+              width={200}
+              height={40}
+              priority
               style={{
-                display: 'inline-block',
-                width: '8px',
-                height: '8px',
-                backgroundColor: 'var(--color-accent-red)',
-                borderRadius: '50%',
-                marginRight: 'var(--spacing-2)',
-                boxShadow: 'var(--shadow-classified)',
+                height: '40px',
+                width: 'auto',
+                maxWidth: '200px',
+                objectFit: 'contain',
+                filter: 'drop-shadow(0 0 8px rgba(255, 68, 68, 0.3))',
               }}
             />
-            BLACK WATER
           </Link>
 
           {/* Navigation Desktop avec effets spectaculaires */}
@@ -250,7 +248,9 @@ export default function Header() {
                 }}
               />
 
-              <span style={{ position: 'relative', zIndex: 3 }}>Membres</span>
+              <span style={{ position: 'relative', zIndex: 3 }}>
+                Opérateurs
+              </span>
             </Link>
           </nav>
 

@@ -192,7 +192,7 @@ export default function MembersPage() {
               <span style={{ color: 'var(--color-text-secondary)' }}>~$</span>
               <span style={{ color: 'var(--color-accent-red)' }}>
                 {' '}
-                access_members_db
+                access_operators_db
               </span>
             </div>
             <div style={{ marginBottom: 'var(--spacing-2)' }}>
@@ -208,7 +208,7 @@ export default function MembersPage() {
             </div>
             <div style={{ marginBottom: 'var(--spacing-2)' }}>
               <span style={{ color: 'var(--color-text-secondary)' }}>
-                Loading member profiles:{' '}
+                Loading operator profiles:{' '}
               </span>
               <div
                 style={{
@@ -277,7 +277,7 @@ export default function MembersPage() {
                     transform: 'translateZ(50px)',
                   }}
                 >
-                  Dossier des Membres
+                  Dossier des Opérateurs
                 </h1>
 
                 {/* Effet de scan sur le titre */}
@@ -673,7 +673,7 @@ export default function MembersPage() {
                   color: 'var(--color-accent-red)',
                 }}
               >
-                Statistiques de l&apos;Équipe
+                Statistiques des Opérateurs
               </h2>
             </FadeIn>
             <StaggeredFadeIn>

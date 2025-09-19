@@ -24,28 +24,8 @@
   },
   {
     "id": "2",
-    "codeName": "VOLK",
-    "tag": "S-02",
-    "image": "/members/volk_blur.svg",
-    "status": "active",
-    "rank": "Capitaine",
-    "callSign": "Loup",
-    "specialization": "spécialisation inconnue",
-    "joinDate": "1993-06-15",
-    "missions": 0,
-    "description": "Capitaine expérimenté.",
-    "skills": ["Tactique", "Coordination", "Combat", "Formation"],
-    "notableMissions": ["Opérations tactiques classifiées"],
-    "additionalInfo": {
-      "clearanceLevel": "Secret",
-      "lastEvaluation": "2024-01-01",
-      "nextMission": "Coordination tactique"
-    }
-  },
-  {
-    "id": "3",
     "codeName": "GHOST",
-    "tag": "S-03",
+    "tag": "S-02",
     "image": "/members/ghost_blur.svg",
     "status": "active",
     "rank": "Capitaine",
@@ -65,6 +45,26 @@
       "clearanceLevel": "Secret",
       "lastEvaluation": "2024-01-01",
       "nextMission": "Opérations spéciales"
+    }
+  },
+  {
+    "id": "3",
+    "codeName": "VOLK",
+    "tag": "S-03",
+    "image": "/members/volk_blur.svg",
+    "status": "active",
+    "rank": "Capitaine",
+    "callSign": "Loup",
+    "specialization": "spécialisation inconnue",
+    "joinDate": "1993-06-15",
+    "missions": 0,
+    "description": "Capitaine expérimenté.",
+    "skills": ["Tactique", "Coordination", "Combat", "Formation"],
+    "notableMissions": ["Opérations tactiques classifiées"],
+    "additionalInfo": {
+      "clearanceLevel": "Secret",
+      "lastEvaluation": "2024-01-01",
+      "nextMission": "Coordination tactique"
     }
   },
   {

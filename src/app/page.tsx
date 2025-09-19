@@ -328,7 +328,7 @@ export default function Home() {
                     }}
                   >
                     <Button variant="outline" size="lg">
-                      Nos Membres
+                      Nos Opérateurs
                     </Button>
                     <div
                       style={{
