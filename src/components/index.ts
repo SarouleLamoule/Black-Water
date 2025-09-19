@@ -3,6 +3,7 @@ export { default as Header } from './Header';
 export { default as Footer } from './Footer';
 export { default as Button } from './Button';
 export { default as Link } from './Link';
+export { default as MouseEffect } from './MouseEffect';
 
 // Export des composants d'images optimisés
 export { default as MemberImage } from './MemberImage';

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
+import MouseEffect from '../components/MouseEffect';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -78,6 +79,9 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={`${inter.variable} ${spaceGrotesk.variable}`}>
+        {/* Effet de souris global */}
+        <MouseEffect />
+
         {/* Skip links pour l'accessibilité */}
         <a href="#main-content" className="skip-link">
           Aller au contenu principal
