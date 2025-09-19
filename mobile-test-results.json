@@ -1,0 +1,67 @@
+{
+  "timestamp": "2025-09-19T13:06:31.381Z",
+  "tests": {
+    "mediaQueries": {
+      "count": 6,
+      "breakpoints": {
+        "mobile": true,
+        "smallMobile": true,
+        "touch": true,
+        "reducedMotion": true,
+        "highRes": true,
+        "landscape": true
+      },
+      "coverage": 6
+    },
+    "mobilePerformance": {
+      "optimizations": {
+        "willChangeDisabled": true,
+        "animationsDisabled": true,
+        "particlesHidden": true,
+        "scanHidden": true,
+        "glowDisabled": true,
+        "transformDisabled": true
+      },
+      "score": 6
+    },
+    "componentResponsiveness": {
+      "components": {
+        "buttons": true,
+        "navigation": true,
+        "cards": true,
+        "documents": true,
+        "containers": true,
+        "images": true
+      },
+      "responsiveCount": 6,
+      "totalComponents": 6
+    },
+    "mobileAccessibility": {
+      "features": {
+        "touchTargets": true,
+        "reducedMotion": true,
+        "highContrast": true,
+        "landscapeSupport": true,
+        "fontSize": true
+      },
+      "score": 5
+    },
+    "imageOptimizations": {
+      "optimizations": {
+        "responsiveImages": true,
+        "retinaSupport": true,
+        "backgroundAttachment": true,
+        "imageSizing": true
+      },
+      "score": 4
+    }
+  },
+  "warnings": [],
+  "recommendations": [
+    "Test on real mobile devices",
+    "Use browser dev tools for mobile testing",
+    "Consider implementing touch gestures",
+    "Optimize for different screen densities",
+    "Test with slow network connections"
+  ]
+}

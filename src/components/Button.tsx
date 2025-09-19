@@ -127,7 +127,77 @@ export default function Button({
       onMouseLeave={handleMouseLeave}
       {...props}
     >
-      {children}
+      {/* Particules d'énergie */}
+      <div
+        className="btn-particles"
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          pointerEvents: 'none',
+          zIndex: 1,
+        }}
+      >
+        {[...Array(4)].map((_, i) => (
+          <div
+            key={i}
+            style={{
+              position: 'absolute',
+              left: `${i * 25 + 12.5}%`,
+              top: '50%',
+              width: '3px',
+              height: '3px',
+              backgroundColor:
+                variant === 'primary' ? 'white' : 'var(--color-accent-red)',
+              borderRadius: '50%',
+              boxShadow: `0 0 8px ${variant === 'primary' ? 'white' : 'var(--color-accent-red)'}`,
+              animationDelay: `${i * 0.2}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Ligne de scan */}
+      <div
+        className="btn-scan"
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '2px',
+          background: `linear-gradient(90deg, transparent, ${variant === 'primary' ? 'white' : 'var(--color-accent-red)'}, transparent)`,
+          opacity: 0,
+          zIndex: 2,
+          pointerEvents: 'none',
+        }}
+      />
+
+      {/* Effet de ripple au clic */}
+      <div
+        className="btn-ripple"
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          width: '20px',
+          height: '20px',
+          backgroundColor:
+            variant === 'primary'
+              ? 'rgba(255, 255, 255, 0.3)'
+              : 'rgba(180, 35, 45, 0.3)',
+          borderRadius: '50%',
+          opacity: 0,
+          zIndex: 2,
+          pointerEvents: 'none',
+          transform: 'translate(-50%, -50%)',
+        }}
+      />
+
+      {/* Contenu du bouton */}
+      <span style={{ position: 'relative', zIndex: 3 }}>{children}</span>
     </button>
   );
 }

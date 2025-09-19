@@ -15,42 +15,300 @@ export default function About() {
       <Header />
 
       <main>
-        {/* Hero Section */}
+        {/* Hero Section avec effets spectaculaires */}
         <section
           style={{
+            minHeight: '100vh',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
             padding: 'var(--spacing-16) 0',
-            backgroundColor: 'var(--color-bg-secondary)',
+            background: `
+              linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #0f0f0f 50%, #1a1a1a 75%, #0a0a0a 100%)
+            `,
+            position: 'relative',
+            overflow: 'hidden',
             textAlign: 'center',
           }}
         >
-          <div className="container">
+          {/* Effet de scan radar en arrière-plan */}
+          <div
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              width: '600px',
+              height: '600px',
+              borderRadius: '50%',
+              border: '2px solid rgba(180, 35, 45, 0.3)',
+              pointerEvents: 'none',
+            }}
+          >
+            {/* Cercles concentriques du radar */}
+            {[...Array(4)].map((_, i) => (
+              <div
+                key={i}
+                style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  width: `${(i + 1) * 120}px`,
+                  height: `${(i + 1) * 120}px`,
+                  borderRadius: '50%',
+                  border: `1px solid rgba(180, 35, 45, ${0.2 - i * 0.05})`,
+                }}
+              />
+            ))}
+
+            {/* Ligne de scan qui tourne */}
+            <div
+              style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '300px',
+                height: '2px',
+                background:
+                  'linear-gradient(90deg, transparent, rgba(180, 35, 45, 0.8), transparent)',
+                transformOrigin: 'left center',
+                animation: 'radarScan 4s linear infinite',
+                boxShadow: '0 0 20px rgba(180, 35, 45, 0.6)',
+              }}
+            />
+
+            {/* Point central du radar */}
+            <div
+              style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '8px',
+                height: '8px',
+                backgroundColor: 'var(--color-accent-red)',
+                borderRadius: '50%',
+                boxShadow: '0 0 20px rgba(180, 35, 45, 0.8)',
+                animation: 'pulse 2s infinite',
+              }}
+            />
+          </div>
+
+          {/* Particules de données Matrix */}
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              pointerEvents: 'none',
+              opacity: 0.3,
+            }}
+          >
+            {[...Array(20)].map((_, i) => {
+              const characters = '01ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+              const char = characters[Math.floor(i * 1.3) % characters.length];
+              const left = ((i * 7) % 100) + ((i * 3) % 20);
+              const delay = (i % 3) + i * 0.2;
+
+              return (
+                <div
+                  key={i}
+                  style={{
+                    position: 'absolute',
+                    left: `${left}%`,
+                    top: '-50px',
+                    color: 'var(--color-accent-red)',
+                    fontSize: '14px',
+                    fontFamily: 'monospace',
+                    fontWeight: 'bold',
+                    animation: `matrixFall ${6 + (i % 3)}s linear infinite`,
+                    animationDelay: `${delay}s`,
+                    textShadow: '0 0 10px rgba(180, 35, 45, 0.8)',
+                  }}
+                >
+                  {char}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Hologramme de fond avec distorsion */}
+          <div
+            style={{
+              position: 'absolute',
+              top: '20%',
+              left: '10%',
+              width: '300px',
+              height: '300px',
+              background:
+                'radial-gradient(circle, rgba(180, 35, 45, 0.1) 0%, transparent 70%)',
+              borderRadius: '50%',
+              animation: 'hologramDistort 8s ease-in-out infinite',
+              filter: 'blur(2px)',
+            }}
+          />
+          <div
+            style={{
+              position: 'absolute',
+              bottom: '20%',
+              right: '10%',
+              width: '250px',
+              height: '250px',
+              background:
+                'radial-gradient(circle, rgba(180, 35, 45, 0.08) 0%, transparent 70%)',
+              borderRadius: '50%',
+              animation: 'hologramDistort 10s ease-in-out infinite reverse',
+              filter: 'blur(2px)',
+            }}
+          />
+
+          {/* Grille de sécurité animée */}
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundImage: `
+                linear-gradient(rgba(180, 35, 45, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(180, 35, 45, 0.03) 1px, transparent 1px)
+              `,
+              backgroundSize: '50px 50px',
+              animation: 'securityGrid 20s linear infinite',
+              pointerEvents: 'none',
+            }}
+          />
+
+          {/* Contenu principal avec effet glitch */}
+          <div
+            className="container"
+            style={{ position: 'relative', zIndex: 10 }}
+          >
             <FadeIn>
-              <h1
+              <div
                 style={{
-                  fontSize: 'var(--font-size-5xl)',
-                  fontWeight: 'var(--font-weight-bold)',
-                  color: 'var(--color-text-primary)',
-                  marginBottom: 'var(--spacing-6)',
-                  fontFamily: 'var(--font-family-display)',
+                  position: 'relative',
+                  display: 'inline-block',
                 }}
               >
-                À propos de Black Water
-              </h1>
-              <p
-                style={{
-                  fontSize: 'var(--font-size-xl)',
-                  color: 'var(--color-text-secondary)',
-                  maxWidth: '800px',
-                  margin: '0 auto',
-                  lineHeight: 'var(--line-height-relaxed)',
-                }}
-              >
-                Née après la démobilisation d&apos;unités d&apos;élite, Black
-                Water opère dans l&apos;ombre pour maintenir l&apos;équilibre et
-                protéger les intérêts de ses clients dans un environnement
-                complexe.
-              </p>
+                <h1
+                  style={{
+                    fontSize: 'var(--font-size-5xl)',
+                    fontWeight: 'var(--font-weight-bold)',
+                    color: 'var(--color-accent-red)',
+                    marginBottom: 'var(--spacing-6)',
+                    fontFamily: 'var(--font-family-display)',
+                    textShadow: `
+                      0 0 20px rgba(180, 35, 45, 0.8),
+                      0 0 40px rgba(180, 35, 45, 0.6),
+                      0 0 60px rgba(180, 35, 45, 0.4)
+                    `,
+                    letterSpacing: '0.1em',
+                    animation: 'glitchText 3s ease-in-out infinite',
+                    transform: 'translateZ(50px)',
+                  }}
+                >
+                  À propos de Black Water
+                </h1>
+
+                {/* Effet de glitch sur le titre */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    background:
+                      'linear-gradient(90deg, transparent 0%, rgba(180, 35, 45, 0.1) 50%, transparent 100%)',
+                    animation:
+                      'slideInFromLeft 2s ease-in-out infinite alternate',
+                    pointerEvents: 'none',
+                  }}
+                />
+              </div>
             </FadeIn>
+
+            <FadeIn delay={400}>
+              <div
+                style={{
+                  position: 'relative',
+                  marginBottom: 'var(--spacing-8)',
+                }}
+              >
+                <p
+                  style={{
+                    fontSize: 'var(--font-size-xl)',
+                    color: 'var(--color-text-secondary)',
+                    maxWidth: '800px',
+                    margin: '0 auto',
+                    lineHeight: 'var(--line-height-relaxed)',
+                    textShadow: '0 0 10px rgba(255, 255, 255, 0.1)',
+                    transform: 'translateZ(30px)',
+                    animation: 'float 6s ease-in-out infinite',
+                  }}
+                >
+                  Née après la démobilisation d&apos;unités d&apos;élite, Black
+                  Water opère dans l&apos;ombre pour maintenir l&apos;équilibre
+                  et protéger leur intérêt.
+                </p>
+
+                {/* Effet de données qui défilent */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '-100px',
+                    width: '2px',
+                    height: '20px',
+                    background:
+                      'linear-gradient(to bottom, transparent, rgba(180, 35, 45, 0.8), transparent)',
+                    animation: 'dataStream 4s linear infinite',
+                    transform: 'translateY(-50%)',
+                  }}
+                />
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '50%',
+                    right: '-100px',
+                    width: '2px',
+                    height: '20px',
+                    background:
+                      'linear-gradient(to bottom, transparent, rgba(180, 35, 45, 0.8), transparent)',
+                    animation: 'dataStream 4s linear infinite 2s',
+                    transform: 'translateY(-50%)',
+                  }}
+                />
+              </div>
+            </FadeIn>
+
+            {/* Indicateur de scroll avec animation */}
+            <div
+              style={{
+                position: 'absolute',
+                bottom: '20px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                animation: 'float 2s ease-in-out infinite',
+              }}
+            >
+              <div
+                style={{
+                  width: '2px',
+                  height: '30px',
+                  background:
+                    'linear-gradient(to bottom, rgba(180, 35, 45, 0.8), transparent)',
+                  borderRadius: '1px',
+                }}
+              />
+            </div>
           </div>
         </section>
 

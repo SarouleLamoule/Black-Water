@@ -178,8 +178,9 @@ export default function MemberProfilePage() {
                   alignItems: 'start',
                 }}
               >
-                {/* Photo du membre */}
+                {/* Photo du membre avec effets de scan facial */}
                 <div
+                  className="member-photo-container"
                   style={{
                     position: 'relative',
                     width: '100%',
@@ -189,9 +190,164 @@ export default function MemberProfilePage() {
                     overflow: 'hidden',
                     backgroundColor: 'var(--color-bg-tertiary)',
                     margin: '0 auto',
+                    border: '2px solid var(--color-accent-red)',
+                    boxShadow: '0 0 20px rgba(180, 35, 45, 0.3)',
                   }}
                 >
+                  {/* Grille biométrique animée */}
                   <div
+                    className="biometric-grid"
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      backgroundImage: `
+                        linear-gradient(rgba(180, 35, 45, 0.1) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(180, 35, 45, 0.1) 1px, transparent 1px)
+                      `,
+                      backgroundSize: '20px 20px',
+                      opacity: 0.3,
+                      pointerEvents: 'none',
+                      zIndex: 1,
+                    }}
+                  />
+
+                  {/* Lignes de scan facial */}
+                  <div
+                    className="facial-scan"
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      height: '2px',
+                      background:
+                        'linear-gradient(90deg, transparent, var(--color-accent-red), transparent)',
+                      opacity: 0,
+                      zIndex: 3,
+                      pointerEvents: 'none',
+                      boxShadow: '0 0 10px var(--color-accent-red)',
+                    }}
+                  />
+
+                  {/* Particules de pixels */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      pointerEvents: 'none',
+                      zIndex: 2,
+                    }}
+                  >
+                    {[...Array(12)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="pixel-particles"
+                        style={{
+                          position: 'absolute',
+                          left: `${(i * 8) % 100}%`,
+                          top: `${(i * 7) % 100}%`,
+                          width: '3px',
+                          height: '3px',
+                          backgroundColor: 'var(--color-accent-red)',
+                          borderRadius: '50%',
+                          boxShadow: '0 0 8px var(--color-accent-red)',
+                          animationDelay: `${i * 0.2}s`,
+                        }}
+                      />
+                    ))}
+                  </div>
+
+                  {/* Lignes de scan horizontales */}
+                  <div
+                    className="scan-lines"
+                    style={{
+                      position: 'absolute',
+                      top: '25%',
+                      left: 0,
+                      right: 0,
+                      height: '1px',
+                      background:
+                        'linear-gradient(90deg, transparent, rgba(180, 35, 45, 0.8), transparent)',
+                      opacity: 0,
+                      zIndex: 3,
+                      pointerEvents: 'none',
+                    }}
+                  />
+                  <div
+                    className="scan-lines"
+                    style={{
+                      position: 'absolute',
+                      top: '50%',
+                      left: 0,
+                      right: 0,
+                      height: '1px',
+                      background:
+                        'linear-gradient(90deg, transparent, rgba(180, 35, 45, 0.8), transparent)',
+                      opacity: 0,
+                      zIndex: 3,
+                      pointerEvents: 'none',
+                      animationDelay: '0.5s',
+                    }}
+                  />
+                  <div
+                    className="scan-lines"
+                    style={{
+                      position: 'absolute',
+                      top: '75%',
+                      left: 0,
+                      right: 0,
+                      height: '1px',
+                      background:
+                        'linear-gradient(90deg, transparent, rgba(180, 35, 45, 0.8), transparent)',
+                      opacity: 0,
+                      zIndex: 3,
+                      pointerEvents: 'none',
+                      animationDelay: '1s',
+                    }}
+                  />
+
+                  {/* Flux de données vertical */}
+                  <div
+                    className="data-stream"
+                    style={{
+                      position: 'absolute',
+                      left: '20%',
+                      top: 0,
+                      bottom: 0,
+                      width: '2px',
+                      background:
+                        'linear-gradient(to bottom, transparent, var(--color-accent-red), transparent)',
+                      opacity: 0,
+                      zIndex: 3,
+                      pointerEvents: 'none',
+                    }}
+                  />
+                  <div
+                    className="data-stream"
+                    style={{
+                      position: 'absolute',
+                      left: '80%',
+                      top: 0,
+                      bottom: 0,
+                      width: '2px',
+                      background:
+                        'linear-gradient(to bottom, transparent, var(--color-accent-red), transparent)',
+                      opacity: 0,
+                      zIndex: 3,
+                      pointerEvents: 'none',
+                      animationDelay: '1.5s',
+                    }}
+                  />
+
+                  {/* Contenu principal avec effet de révélation */}
+                  <div
+                    className="image-reveal"
                     style={{
                       width: '100%',
                       height: '100%',
@@ -205,9 +361,89 @@ export default function MemberProfilePage() {
                       fontWeight: 'var(--font-weight-medium)',
                       textAlign: 'center',
                       padding: 'var(--spacing-4)',
+                      position: 'relative',
+                      zIndex: 1,
+                      filter: 'blur(3px) brightness(0.5)',
+                      transition: 'all 1.5s ease',
                     }}
                   >
-                    IMAGE CLASSIFIÉE
+                    <div
+                      style={{
+                        position: 'relative',
+                        zIndex: 2,
+                      }}
+                    >
+                      <div
+                        style={{
+                          fontSize: 'var(--font-size-xs)',
+                          color: 'var(--color-accent-red)',
+                          marginBottom: 'var(--spacing-2)',
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.1em',
+                          fontWeight: 'var(--font-weight-bold)',
+                        }}
+                      >
+                        SCAN BIOMÉTRIQUE
+                      </div>
+                      <div
+                        style={{
+                          fontSize: 'var(--font-size-sm)',
+                          color: 'var(--color-text-tertiary)',
+                        }}
+                      >
+                        IMAGE CLASSIFIÉE
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Indicateur de niveau de sécurité */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: 'var(--spacing-2)',
+                      right: 'var(--spacing-2)',
+                      backgroundColor: 'var(--color-accent-red)',
+                      color: 'white',
+                      padding: 'var(--spacing-1) var(--spacing-2)',
+                      borderRadius: 'var(--radius-sm)',
+                      fontSize: 'var(--font-size-xs)',
+                      fontWeight: 'var(--font-weight-bold)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em',
+                      zIndex: 4,
+                      boxShadow: '0 0 10px rgba(180, 35, 45, 0.8)',
+                    }}
+                  >
+                    TOP SECRET
+                  </div>
+
+                  {/* Indicateur de scan en cours */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      bottom: 'var(--spacing-2)',
+                      left: 'var(--spacing-2)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 'var(--spacing-1)',
+                      backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                      padding: 'var(--spacing-1) var(--spacing-2)',
+                      borderRadius: 'var(--radius-sm)',
+                      fontSize: 'var(--font-size-xs)',
+                      color: 'var(--color-accent-red)',
+                      zIndex: 4,
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: '6px',
+                        height: '6px',
+                        backgroundColor: 'var(--color-accent-red)',
+                        borderRadius: '50%',
+                        animation: 'pulse 1s infinite',
+                      }}
+                    />
+                    SCAN EN COURS
                   </div>
                 </div>
 
@@ -293,7 +529,7 @@ export default function MemberProfilePage() {
           </div>
         </section>
 
-        {/* Section Informations en cours d'investigation */}
+        {/* Section Informations en cours d'investigation avec effets spectaculaires */}
         <section
           style={{
             padding: 'var(--spacing-16) 0',
@@ -303,6 +539,7 @@ export default function MemberProfilePage() {
           <div className="container">
             <FadeIn>
               <div
+                className="investigation-container"
                 style={{
                   backgroundColor: 'var(--color-bg-secondary)',
                   border: '2px solid var(--color-accent-red)',
@@ -313,9 +550,63 @@ export default function MemberProfilePage() {
                   maxWidth: '800px',
                   margin: '0 auto',
                   boxShadow: 'var(--shadow-classified)',
+                  overflow: 'hidden',
                 }}
               >
+                {/* Grille de scan animée en arrière-plan */}
                 <div
+                  className="border-scan"
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    backgroundImage: `
+                      linear-gradient(rgba(180, 35, 45, 0.1) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(180, 35, 45, 0.1) 1px, transparent 1px)
+                    `,
+                    backgroundSize: '20px 20px',
+                    opacity: 0.3,
+                    pointerEvents: 'none',
+                    zIndex: 1,
+                  }}
+                />
+
+                {/* Particules de données qui s'échappent */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    pointerEvents: 'none',
+                    zIndex: 2,
+                  }}
+                >
+                  {[...Array(15)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="data-escape"
+                      style={{
+                        position: 'absolute',
+                        left: `${(i * 7) % 100}%`,
+                        top: `${(i * 6) % 100}%`,
+                        width: '4px',
+                        height: '4px',
+                        backgroundColor: 'var(--color-accent-red)',
+                        borderRadius: '50%',
+                        boxShadow: '0 0 10px var(--color-accent-red)',
+                        animationDelay: `${i * 0.3}s`,
+                      }}
+                    />
+                  ))}
+                </div>
+
+                {/* Badge ENQUÊTE EN COURS avec pulsation */}
+                <div
+                  className="warning-pulse"
                   style={{
                     position: 'absolute',
                     top: 'var(--spacing-4)',
@@ -327,12 +618,16 @@ export default function MemberProfilePage() {
                     fontSize: 'var(--font-size-xs)',
                     fontWeight: 'var(--font-weight-bold)',
                     letterSpacing: '0.05em',
+                    zIndex: 4,
+                    boxShadow: '0 0 15px rgba(180, 35, 45, 0.8)',
                   }}
                 >
                   ENQUÊTE EN COURS
                 </div>
 
+                {/* Cercle principal avec pulsation intense */}
                 <div
+                  className="intense-pulse"
                   style={{
                     width: '120px',
                     height: '120px',
@@ -344,6 +639,7 @@ export default function MemberProfilePage() {
                     justifyContent: 'center',
                     margin: '0 auto var(--spacing-8)',
                     position: 'relative',
+                    zIndex: 3,
                   }}
                 >
                   <div
@@ -355,7 +651,8 @@ export default function MemberProfilePage() {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      animation: 'pulse 2s infinite',
+                      animation: 'pulse 1s infinite',
+                      boxShadow: '0 0 20px rgba(180, 35, 45, 0.8)',
                     }}
                   >
                     <div
@@ -364,29 +661,38 @@ export default function MemberProfilePage() {
                         height: '20px',
                         backgroundColor: 'var(--color-bg-primary)',
                         borderRadius: '50%',
+                        animation: 'pulse 0.5s infinite reverse',
                       }}
                     />
                   </div>
                 </div>
 
+                {/* Titre avec effet de glitch */}
                 <h2
+                  className="text-glitch"
                   style={{
                     fontSize: 'var(--font-size-3xl)',
                     fontWeight: 'var(--font-weight-bold)',
                     color: 'var(--color-accent-red)',
                     marginBottom: 'var(--spacing-6)',
                     fontFamily: 'var(--font-family-display)',
+                    position: 'relative',
+                    zIndex: 3,
+                    textShadow: '0 0 20px rgba(180, 35, 45, 0.5)',
                   }}
                 >
                   Informations en cours d&apos;investigation
                 </h2>
 
+                {/* Texte principal */}
                 <p
                   style={{
                     fontSize: 'var(--font-size-lg)',
                     color: 'var(--color-text-primary)',
                     marginBottom: 'var(--spacing-6)',
                     lineHeight: 'var(--line-height-relaxed)',
+                    position: 'relative',
+                    zIndex: 3,
                   }}
                 >
                   Le dossier de cet opérateur fait actuellement l&apos;objet
@@ -394,6 +700,7 @@ export default function MemberProfilePage() {
                   détaillées sont temporairement classifiées et inaccessibles.
                 </p>
 
+                {/* Zone d'avertissement avec effets */}
                 <div
                   style={{
                     backgroundColor: 'var(--color-bg-tertiary)',
@@ -401,17 +708,34 @@ export default function MemberProfilePage() {
                     borderRadius: 'var(--radius-lg)',
                     padding: 'var(--spacing-6)',
                     marginTop: 'var(--spacing-8)',
+                    position: 'relative',
+                    zIndex: 3,
+                    boxShadow: '0 0 10px rgba(180, 35, 45, 0.2)',
                   }}
                 >
                   <p
+                    className="warning-pulse"
                     style={{
                       fontSize: 'var(--font-size-sm)',
                       color: 'var(--color-text-secondary)',
                       margin: 0,
                       fontStyle: 'italic',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: 'var(--spacing-2)',
                     }}
                   >
-                    ⚠️ Accès restreint - Niveau de sécurité requis : TOP SECRET
+                    <span
+                      style={{
+                        fontSize: 'var(--font-size-lg)',
+                        color: 'var(--color-accent-red)',
+                        animation: 'pulse 1s infinite',
+                      }}
+                    >
+                      ⚠️
+                    </span>
+                    Accès restreint - Niveau de sécurité requis : TOP SECRET
                   </p>
                   <p
                     style={{
@@ -423,6 +747,64 @@ export default function MemberProfilePage() {
                     Les informations seront déclassifiées une fois
                     l&apos;enquête terminée.
                   </p>
+                </div>
+
+                {/* Indicateurs de statut d'enquête */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    bottom: 'var(--spacing-4)',
+                    left: 'var(--spacing-4)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 'var(--spacing-2)',
+                    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                    padding: 'var(--spacing-1) var(--spacing-3)',
+                    borderRadius: 'var(--radius-sm)',
+                    fontSize: 'var(--font-size-xs)',
+                    color: 'var(--color-accent-red)',
+                    zIndex: 4,
+                  }}
+                >
+                  <div
+                    style={{
+                      width: '6px',
+                      height: '6px',
+                      backgroundColor: 'var(--color-accent-red)',
+                      borderRadius: '50%',
+                      animation: 'pulse 1s infinite',
+                    }}
+                  />
+                  ENQUÊTE ACTIVE
+                </div>
+
+                {/* Indicateur de progression */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    bottom: 'var(--spacing-4)',
+                    right: 'var(--spacing-4)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 'var(--spacing-2)',
+                    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                    padding: 'var(--spacing-1) var(--spacing-3)',
+                    borderRadius: 'var(--radius-sm)',
+                    fontSize: 'var(--font-size-xs)',
+                    color: 'var(--color-accent-red)',
+                    zIndex: 4,
+                  }}
+                >
+                  <div
+                    style={{
+                      width: '6px',
+                      height: '6px',
+                      backgroundColor: 'var(--color-accent-red)',
+                      borderRadius: '50%',
+                      animation: 'pulse 1.5s infinite',
+                    }}
+                  />
+                  EN COURS
                 </div>
               </div>
             </FadeIn>

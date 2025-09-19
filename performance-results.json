@@ -1,0 +1,25 @@
+{
+  "timestamp": "2025-09-19T12:37:02.113Z",
+  "metrics": {
+    "bundleSize": 2546,
+    "bundleFiles": 112,
+    "cssSize": 27,
+    "keyframesCount": 77,
+    "animationCount": 49,
+    "animationClassCount": 0,
+    "optimizedProps": 308,
+    "unoptimizedProps": 21,
+    "performanceScore": 94
+  },
+  "warnings": [
+    "Bundle size (2546KB) exceeds threshold (500KB)",
+    "Too many keyframes (77). Consider optimizing animations."
+  ],
+  "recommendations": [
+    "Consider code splitting for large bundles",
+    "Consider consolidating similar animations",
+    "Use will-change property for animated elements",
+    "Consider using CSS containment for complex animations",
+    "Implement lazy loading for non-critical animations"
+  ]
+}

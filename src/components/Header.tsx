@@ -68,7 +68,7 @@ export default function Header() {
             BLACK WATER
           </Link>
 
-          {/* Navigation Desktop */}
+          {/* Navigation Desktop avec effets spectaculaires */}
           <nav
             style={{
               display: 'none',
@@ -79,6 +79,7 @@ export default function Header() {
           >
             <Link
               href="/about"
+              className={`nav-link ${isActive('/about') ? 'active' : ''}`}
               style={{
                 color: isActive('/about')
                   ? 'var(--color-accent-red)'
@@ -88,22 +89,86 @@ export default function Header() {
                 fontWeight: 'var(--font-weight-medium)',
                 transition: 'color var(--duration-200) var(--ease-in-out)',
                 position: 'relative',
-              }}
-              onMouseEnter={(e) => {
-                if (!isActive('/about')) {
-                  e.currentTarget.style.color = 'var(--color-accent-red)';
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (!isActive('/about')) {
-                  e.currentTarget.style.color = 'var(--color-text-primary)';
-                }
+                padding: 'var(--spacing-2) var(--spacing-4)',
+                borderRadius: 'var(--radius-base)',
+                overflow: 'hidden',
               }}
             >
-              Qui sommes nous ?
+              {/* Particules de survol */}
+              <div
+                className="nav-particles"
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  pointerEvents: 'none',
+                  zIndex: 1,
+                }}
+              >
+                {[...Array(3)].map((_, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      position: 'absolute',
+                      left: `${i * 30 + 20}%`,
+                      top: '50%',
+                      width: '2px',
+                      height: '2px',
+                      backgroundColor: 'var(--color-accent-red)',
+                      borderRadius: '50%',
+                      boxShadow: '0 0 6px var(--color-accent-red)',
+                      animationDelay: `${i * 0.3}s`,
+                    }}
+                  />
+                ))}
+              </div>
+
+              {/* Ligne de scan */}
+              <div
+                className="nav-scan"
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: '1px',
+                  background:
+                    'linear-gradient(90deg, transparent, var(--color-accent-red), transparent)',
+                  opacity: 0,
+                  zIndex: 2,
+                  pointerEvents: 'none',
+                }}
+              />
+
+              {/* Traînée de souris */}
+              <div
+                className="nav-mouse-trail"
+                style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  width: '4px',
+                  height: '4px',
+                  backgroundColor: 'var(--color-accent-red)',
+                  borderRadius: '50%',
+                  boxShadow: '0 0 8px var(--color-accent-red)',
+                  opacity: 0,
+                  zIndex: 2,
+                  pointerEvents: 'none',
+                  transform: 'translate(-50%, -50%)',
+                }}
+              />
+
+              <span style={{ position: 'relative', zIndex: 3 }}>
+                Qui sommes nous ?
+              </span>
             </Link>
+
             <Link
               href="/members"
+              className={`nav-link ${isActive('/members') ? 'active' : ''}`}
               style={{
                 color: isActive('/members')
                   ? 'var(--color-accent-red)'
@@ -112,19 +177,80 @@ export default function Header() {
                 fontSize: 'var(--font-size-sm)',
                 fontWeight: 'var(--font-weight-medium)',
                 transition: 'color var(--duration-200) var(--ease-in-out)',
-              }}
-              onMouseEnter={(e) => {
-                if (!isActive('/members')) {
-                  e.currentTarget.style.color = 'var(--color-accent-red)';
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (!isActive('/members')) {
-                  e.currentTarget.style.color = 'var(--color-text-primary)';
-                }
+                position: 'relative',
+                padding: 'var(--spacing-2) var(--spacing-4)',
+                borderRadius: 'var(--radius-base)',
+                overflow: 'hidden',
               }}
             >
-              Membres
+              {/* Particules de survol */}
+              <div
+                className="nav-particles"
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  pointerEvents: 'none',
+                  zIndex: 1,
+                }}
+              >
+                {[...Array(3)].map((_, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      position: 'absolute',
+                      left: `${i * 30 + 20}%`,
+                      top: '50%',
+                      width: '2px',
+                      height: '2px',
+                      backgroundColor: 'var(--color-accent-red)',
+                      borderRadius: '50%',
+                      boxShadow: '0 0 6px var(--color-accent-red)',
+                      animationDelay: `${i * 0.3}s`,
+                    }}
+                  />
+                ))}
+              </div>
+
+              {/* Ligne de scan */}
+              <div
+                className="nav-scan"
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: '1px',
+                  background:
+                    'linear-gradient(90deg, transparent, var(--color-accent-red), transparent)',
+                  opacity: 0,
+                  zIndex: 2,
+                  pointerEvents: 'none',
+                }}
+              />
+
+              {/* Traînée de souris */}
+              <div
+                className="nav-mouse-trail"
+                style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  width: '4px',
+                  height: '4px',
+                  backgroundColor: 'var(--color-accent-red)',
+                  borderRadius: '50%',
+                  boxShadow: '0 0 8px var(--color-accent-red)',
+                  opacity: 0,
+                  zIndex: 2,
+                  pointerEvents: 'none',
+                  transform: 'translate(-50%, -50%)',
+                }}
+              />
+
+              <span style={{ position: 'relative', zIndex: 3 }}>Membres</span>
             </Link>
           </nav>
 
@@ -149,7 +275,7 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Navigation Mobile */}
+        {/* Navigation Mobile avec effets */}
         {isMenuOpen && (
           <nav
             id="mobile-navigation"
@@ -162,12 +288,14 @@ export default function Header() {
               padding: 'var(--spacing-4) 0',
               borderTop: '1px solid var(--color-border-primary)',
               backgroundColor: 'var(--color-bg-secondary)',
+              animation: 'navSlideIn 0.3s ease-out',
             }}
             className="mobile-nav"
           >
             <Link
               href="/about"
               onClick={() => setIsMenuOpen(false)}
+              className={`nav-link ${isActive('/about') ? 'active' : ''}`}
               style={{
                 color: isActive('/about')
                   ? 'var(--color-accent-red)'
@@ -175,15 +303,71 @@ export default function Header() {
                 textDecoration: 'none',
                 fontSize: 'var(--font-size-base)',
                 fontWeight: 'var(--font-weight-medium)',
-                padding: 'var(--spacing-2) 0',
+                padding: 'var(--spacing-3) var(--spacing-4)',
                 transition: 'color var(--duration-200) var(--ease-in-out)',
+                position: 'relative',
+                borderRadius: 'var(--radius-base)',
+                margin: '0 var(--spacing-4)',
+                overflow: 'hidden',
               }}
             >
-              Qui sommes nous ?
+              {/* Particules de survol pour mobile */}
+              <div
+                className="nav-particles"
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  pointerEvents: 'none',
+                  zIndex: 1,
+                }}
+              >
+                {[...Array(2)].map((_, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      position: 'absolute',
+                      left: `${i * 50 + 25}%`,
+                      top: '50%',
+                      width: '3px',
+                      height: '3px',
+                      backgroundColor: 'var(--color-accent-red)',
+                      borderRadius: '50%',
+                      boxShadow: '0 0 8px var(--color-accent-red)',
+                      animationDelay: `${i * 0.4}s`,
+                    }}
+                  />
+                ))}
+              </div>
+
+              {/* Ligne de scan pour mobile */}
+              <div
+                className="nav-scan"
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: '2px',
+                  background:
+                    'linear-gradient(90deg, transparent, var(--color-accent-red), transparent)',
+                  opacity: 0,
+                  zIndex: 2,
+                  pointerEvents: 'none',
+                }}
+              />
+
+              <span style={{ position: 'relative', zIndex: 3 }}>
+                Qui sommes nous ?
+              </span>
             </Link>
+
             <Link
               href="/members"
               onClick={() => setIsMenuOpen(false)}
+              className={`nav-link ${isActive('/members') ? 'active' : ''}`}
               style={{
                 color: isActive('/members')
                   ? 'var(--color-accent-red)'
@@ -191,11 +375,63 @@ export default function Header() {
                 textDecoration: 'none',
                 fontSize: 'var(--font-size-base)',
                 fontWeight: 'var(--font-weight-medium)',
-                padding: 'var(--spacing-2) 0',
+                padding: 'var(--spacing-3) var(--spacing-4)',
                 transition: 'color var(--duration-200) var(--ease-in-out)',
+                position: 'relative',
+                borderRadius: 'var(--radius-base)',
+                margin: '0 var(--spacing-4)',
+                overflow: 'hidden',
               }}
             >
-              Membres
+              {/* Particules de survol pour mobile */}
+              <div
+                className="nav-particles"
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  pointerEvents: 'none',
+                  zIndex: 1,
+                }}
+              >
+                {[...Array(2)].map((_, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      position: 'absolute',
+                      left: `${i * 50 + 25}%`,
+                      top: '50%',
+                      width: '3px',
+                      height: '3px',
+                      backgroundColor: 'var(--color-accent-red)',
+                      borderRadius: '50%',
+                      boxShadow: '0 0 8px var(--color-accent-red)',
+                      animationDelay: `${i * 0.4}s`,
+                    }}
+                  />
+                ))}
+              </div>
+
+              {/* Ligne de scan pour mobile */}
+              <div
+                className="nav-scan"
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: '2px',
+                  background:
+                    'linear-gradient(90deg, transparent, var(--color-accent-red), transparent)',
+                  opacity: 0,
+                  zIndex: 2,
+                  pointerEvents: 'none',
+                }}
+              />
+
+              <span style={{ position: 'relative', zIndex: 3 }}>Membres</span>
             </Link>
           </nav>
         )}
