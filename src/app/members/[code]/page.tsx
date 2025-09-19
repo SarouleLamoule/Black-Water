@@ -173,16 +173,17 @@ export default function MemberProfilePage() {
               <div
                 style={{
                   display: 'grid',
-                  gridTemplateColumns: '1fr 2fr',
-                  gap: 'var(--spacing-12)',
-                  alignItems: 'center',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                  gap: 'var(--spacing-8)',
+                  alignItems: 'start',
                 }}
               >
                 {/* Photo du membre */}
                 <div
                   style={{
                     position: 'relative',
-                    width: '200px',
+                    width: '100%',
+                    maxWidth: '300px',
                     height: '200px',
                     borderRadius: 'var(--radius-xl)',
                     overflow: 'hidden',

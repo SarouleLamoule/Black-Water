@@ -66,9 +66,9 @@ export default function About() {
               <div
                 style={{
                   display: 'grid',
-                  gridTemplateColumns: '1fr 1fr',
-                  gap: 'var(--spacing-12)',
-                  alignItems: 'center',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                  gap: 'var(--spacing-8)',
+                  alignItems: 'start',
                 }}
               >
                 <div>
