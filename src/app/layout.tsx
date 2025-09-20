@@ -17,14 +17,17 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://blackwater.example.com'),
+  metadataBase: new URL('https://black-water-self.vercel.app'),
   title: 'Black Water - Organisation Clandestine',
   description:
     'Organisation clandestine opérant dans les ombres de Los Santos.',
   icons: {
-    icon: '/icone.ico',
+    icon: [
+      { url: '/icone.ico', sizes: 'any' },
+      { url: '/logo.png', type: 'image/png' },
+    ],
     shortcut: '/icone.ico',
-    apple: '/icone.ico',
+    apple: '/logo.png',
   },
   keywords: [
     'Black Water',
@@ -36,8 +39,8 @@ export const metadata: Metadata = {
     'RP',
   ],
   authors: [{ name: 'Black Water' }],
-  creator: 'Black Water',
-  publisher: 'Black Water',
+  creator: 'saroulelamoule',
+  publisher: 'saroulelamoule',
   robots: {
     index: true,
     follow: true,
@@ -52,7 +55,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
-    url: 'https://blackwater.example.com',
+    url: 'https://black-water-self.vercel.app',
     siteName: 'Black Water',
     title: 'Black Water - Organisation Clandestine',
     description:
