@@ -62,11 +62,11 @@ export const metadata: Metadata = {
       'Organisation clandestine opérant dans les ombres de Los Santos.',
     images: [
       {
-        url: 'https://black-water-self.vercel.app/og-image.jpg',
+        url: 'https://black-water-self.vercel.app/logo.png',
         width: 1200,
         height: 630,
         alt: 'Black Water - Organisation Clandestine',
-        type: 'image/jpeg',
+        type: 'image/png',
       },
     ],
   },
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     title: 'Black Water - Organisation Clandestine',
     description:
       'Organisation clandestine opérant dans les ombres de Los Santos.',
-    images: ['https://black-water-self.vercel.app/og-image.jpg'],
+    images: ['https://black-water-self.vercel.app/logo.png'],
   },
   verification: {
     google: 'your-google-verification-code',
