@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     ],
   },
   other: {
-    'fb:app_id': '123456789',
+    'property:fb:app_id': '123456789',
   },
   twitter: {
     card: 'summary_large_image',
